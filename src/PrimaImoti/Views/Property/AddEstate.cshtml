@@ -1,0 +1,459 @@
+﻿@model PrimaImoti.ViewModels.AddEstateViewModel
+<!-- property area -->
+<div class="content-area submit-property" style="background-color: #FCFCFC;">
+    &nbsp;
+    <div class="container">
+        <div class="clearfix">
+            <div class="wizard-container">
+
+                <div class="wizard-card ct-wizard-orange" id="wizardProperty">
+                    <form asp-controller="Property" asp-action="AddEstate" enctype="multipart/form-data" method="post">
+                        <div asp-validation-summary="ModelOnly"></div>
+                        <div class="wizard-header">
+                            <h3>
+                                <b>ДОБАВИ</b> ТВОЯТ ИМОТ <br>
+                                <small>Добави твоят имот за продажба и ние ще се погрижим.</small>
+                            </h3>
+                        </div>
+
+                        <ul>
+                            <li><a href="#step1" data-toggle="tab">Стъпка 1 </a></li>
+                            <li><a href="#step2" data-toggle="tab">Стъпка 2 </a></li>
+                            <li><a href="#step3" data-toggle="tab">Стъпка 3 </a></li>
+                            <li><a href="#step4" data-toggle="tab">Стъпка 4 </a></li>
+                        </ul>
+
+                        <div class="tab-content">
+
+                            <div class="tab-pane" id="step1">
+                                <div class="row p-b-15  ">
+                                    <h4 class="info-text"> Добави своя имот и ние ще се погрижим!</h4>
+                                    <div class="col-sm-4 col-sm-offset-1">
+                                        <div class="picture-container">
+                                            <div class="picture">
+                                                <img src="~/assets/img/default-property.jpg" class="picture-src" id="wizardPicturePreview" title="" />
+                                                <input type="file" id="wizard-picture">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label asp-for="Type"></label>
+                                            <select asp-for="Type" id="propertytype" name="propertyname" type="text" class="dropdown form-control" placeholder="Тип имот...">
+                                                <option value="">-- избери --</option>
+                                                <option value="1">Едностаен</option>
+                                                <option value="2">Двустаен</option>
+                                                <option value="3">Тристаен</option>
+                                                <option value="4">Четиристаен</option>
+                                                <option value="5">Многостаен</option>
+                                                <option value="6">Мезонет</option>
+                                                <option value="7">Ателие/Таван</option>
+                                                <option value="8">Стая</option>
+                                                <option value="9">Къща</option>
+                                                <option value="11">Вила</option>
+                                                <option value="10">Етаж от къща</option>
+                                                <option value="12">Офис</option>
+                                                <option value="13">Гараж</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label asp-for="Price"></label>
+                                            <input asp-for="Price" type="number" name="propertyprice" class="form-control" placeholder="Въведете цена">
+                                            <select asp-for="Currency" class="dropdown form-control">
+                                                <option>EURO</option>
+                                                <option>ЛЕВА</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="Adress"></label>
+                                            <input asp-for="Adress" name="adress" type="text" class="form-control" placeholder="Въведете адрес">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--  End step 1 -->
+
+                            <div class="tab-pane" id="step2">
+                                <h4 class="info-text">Детайли</h4>
+                                <div class="row">
+
+                                    <div class="col-sm-12">
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label asp-for="Location"></label>
+                                                <select asp-for="Location" id="lunchBegins" class="dropdown show-tick form-control">
+                                                    <option>–Избери–</option>
+                                                    <option>Трошево</option>
+                                                    <option>Младост</option>
+                                                    <option>Владислав Варненчик</option>
+                                                    <option>Кайсиева градина</option>
+                                                    <option>Апсрухово</option>
+                                                    <option>Въздраждане</option>
+                                                    <option>Галата</option>
+                                                    <option>Виница</option>
+                                                    <option>Бриз</option>
+                                                    <option>Левски</option>
+                                                    <option>Цветен квартал</option>
+                                                    <option>Изгрев</option>
+                                                    <option>Нептун</option>
+                                                    <option>Червен площад</option>
+                                                    <option>Общината</option>
+                                                    <option>Чаталджа</option>
+                                                    <option>Спортна зала</option>
+                                                    <option>ВИНС</option>
+                                                    <option>Погреби</option>
+                                                    <option>Автогара</option>
+                                                    <option>Победа</option>
+                                                    <option>Техникумите</option>
+                                                    <option>Центрър</option>
+                                                    <option>ЗК Тракия</option>
+                                                    <option>ЛК Тракия</option>
+                                                    <option>Окръжна болница</option>
+                                                    <option>Завод Дружба</option>
+                                                    <option>Гръжка махала</option>
+                                                    <option>Морска Градина</option>
+                                                    <option>Албена</option>
+                                                    <option>Златни Пясъци</option>
+                                                    <option>Св.Св. Константин и Елена</option>
+                                                    <option>Слънчев ден</option>
+                                                    <option>к.к Чайка</option>
+                                                    <option>Ален Мак</option>
+                                                    <option>Траката</option>
+                                                    <option>Евксиновград</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label asp-for="Building"></label>
+                                                <select asp-for="Building" id="lunchBegins" class="dropdown show-tick form-control" data-live-search="true" title="Въведи">
+                                                    <option>–Избери–</option>
+                                                    <option>Тухла</option>
+                                                    <option>Панел</option>
+                                                    <option>Гредоред</option>
+                                                    <option>ЕПК</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label asp-for="Heating">Отопление</label>
+                                                <select asp-for="Heating" id="basic" class="dropdown show-tick form-control">
+                                                    <option>–Избери–</option>
+                                                    <option>Тец</option>
+                                                    <option>Локално</option>
+                                                    <option>Електричество</option>
+                                                    <option>Без отопление</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label asp-for="Area"></label>
+                                                <input asp-for="Area" id="basic" type="number" class="form-control" placeholder="Бъведи квадратура">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label asp-for="Furniture"></label>
+                                                <select asp-for="Furniture" id="basic" class="dropdown show-tick form-control">
+                                                    <option>–Избери–</option>
+                                                    <option value="Да">Да</option>
+                                                    <option value="Не">Не</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label asp-for="Area">Под район</label>
+                                                <input asp-for="Area" id="basic" type="text" class="form-control" placeholder="Бъведи квадратура">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3" id="dvor">
+                                            <div class="form-group">
+                                                <label>Двор кв.м</label>
+                                                <input asp-for="Area" id="basic" type="number" class="form-control" placeholder="Бъведи квадратура">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label asp-for="Floor"></label>
+                                                <select asp-for="Floor" id="basic" class="dropdown show-tick form-control">
+                                                    <option>–Избери–</option>
+                                                    <option value="1">Партер</option>
+                                                    <option value="2">1-ви</option>
+                                                    <option value="3">2-ри</option>
+                                                    <option value="4">3-ти</option>
+                                                    <option value="5">4-ти</option>
+                                                    <option value="6">5-ти</option>
+                                                    <option value="7">6-ти</option>
+                                                    <option value="8">7-ми</option>
+                                                    <option value="9">8-ми</option>
+                                                    <option value="10">9-ти</option>
+                                                    <option value="11">10-ти</option>
+                                                    <option value="12">11-ти</option>
+                                                    <option value="13">12-ти</option>
+                                                    <option value="14">13-ти</option>
+                                                    <option value="15">14-ти</option>
+                                                    <option value="16">15-ти</option>
+                                                    <option value="17">16-ти</option>
+                                                    <option value="18">17-ти</option>
+                                                    <option value="19">18-ти</option>
+                                                    <option value="20">19-ти</option>
+                                                    <option value="21">20-ти</option>
+                                                    <option value="22">21-ви</option>
+                                                    <option value="23">22-ри</option>
+                                                    <option value="24">23-ти</option>
+                                                    <option value="25">24-ти</option>
+                                                    <option value="26">25-ти</option>
+                                                    <option value="27">26-ти</option>
+                                                    <option value="28">27-ми</option>
+                                                    <option value="29">28-ми</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-sm-12 padding-top-15">
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input asp-for="InBuildingProcess" type="checkbox">В строеж
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input asp-for="WithTransition" type="checkbox">С преход
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input asp-for="WithElevator" type="checkbox">Асаньор
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input asp-for="Garage" type="checkbox">Гараж
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 padding-bottom-15">
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input asp-for="Parking" type="checkbox">Паркинг
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input asp-for="Credit" type="checkbox">Лизинг
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input asp-for="iSMortgage" type="checkbox">Ипотекиран
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input asp-for="Trade" type="checkbox">Бартер
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input asp-for="WithInternetConnection" type="checkbox">Интернет връзка
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input asp-for="WithBussiness" type="checkbox">С действащ бизнес
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input asp-for="VideoSecurity" type="checkbox">Видео наблюдение
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input asp-for="AccsessControl" type="checkbox">Контрол на достъпа
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input asp-for="Security" type="checkbox">Охрана
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <div class="checkbox">
+                                                    <label asp-for="Renovated">
+                                                        <input asp-for="Renovated" type="checkbox">Саниран
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                </div>
+                                <div class="col-lg">
+                                    <div class="col-lg">
+                                        <div class="form-group">
+                                            <label asp-for="Description"></label>
+                                            <textarea asp-for="Description" name="description" type="text" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- End step 2 -->
+                            <div class="tab-pane" id="step3">
+                                <h4 class="info-text">Добави още снимки</h4>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label asp-for="FormFile" for="property-images">Избери снимки :</label>
+                                            <input asp-for="FormFile" class="form-control-" id="property-images">
+                                            <p class="help-block">Добави още снимки на имота</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="property-video">Property video :</label>
+                                            <input class="form-control" value="" placeholder="http://www.youtube.com, http://vimeo.com" name="property_video" type="text">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input class="form-control" value="" placeholder="http://www.youtube.com, http://vimeo.com" name="property_video" type="text">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input class="form-control" value="" placeholder="http://www.youtube.com, http://vimeo.com" name="property_video" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--  End step 3 -->
+
+                            <div class="tab-pane" id="step4">
+                                <h4 class="info-text"> Завършване и изпращане</h4>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label asp-for="Person.FirstName"></label>
+                                        <input asp-for="Person.FirstName" id="basic" type="text" class="form-control" placeholder="Име">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label asp-for="Person.LastName"></label>
+                                        <input asp-for="Person.LastName" id="basic" type="text" class="form-control" placeholder="Фамилия">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label asp-for="Person.Email"></label>
+                                        <input asp-for="Person.Email" id="basic" type="text" class="form-control" placeholder="Бъведи квадратура">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label asp-for="Person.Phone"></label>
+                                        <input asp-for="Person.Phone" id="basic" type="text" class="form-control" placeholder="Бъведи квадратура">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="">
+                                            <p>
+                                                <label><strong>Terms and Conditions</strong></label>
+                                                By accessing or using  GARO ESTATE services, such as
+                                                posting your property advertisement with your personal
+                                                information on our website you agree to the
+                                                collection, use and disclosure of your personal information
+                                                in the legal proper manner
+                                            </p>
+
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" /> <strong>Accept termes and conditions.</strong>
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--  End step 4 -->
+
+                        </div>
+
+                        <div class="wizard-footer">
+                            <div class="pull-right">
+                                <input type='button' class='btn btn-next btn-primary' name='next' value='Напред' />
+                                <input type="submit" class='btn btn-finish btn-primary ' name='finish' value='Изпрати' />
+                            </div>
+
+                            <div class="pull-left">
+                                <input type='button' class='btn btn-previous btn-default' name='previous' value='Назад' />
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </form>
+                </div>
+                <!-- End submit form -->
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,82 @@
+﻿@model IEnumerable<PrimaImoti.ViewModels.ViewModels.AllEstatesViewModel>
+
+@{
+    ViewData["Title"] = "AllEstates";
+}
+
+<h1>AllEstates</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Area)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Furniture)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Building)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Heating)
+            </th>
+            <th>
+                <img ng-src="data:image/jpeg;base64,{{model.Image}}" id="photo-id" />
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+          
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Area)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Furniture)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Building)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Heating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Images)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

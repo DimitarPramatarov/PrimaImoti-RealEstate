@@ -1,0 +1,197 @@
+﻿@model PrimaImoti.ViewModels.ContactViewModel
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<div class="page-head">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="page-head-content text-center">
+                <h1 class="page-title">Свържете се с нас </h1>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End page header -->
+<!-- property area -->
+<div class="content-area recent-property padding-top-40" style="background-color: #FFF;">
+    <div class="container">
+
+        <div class="col-md-9">
+
+            <div class="" id="contact1">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h3><i class="fa fa-map-marker"></i> Адрес</h3>
+                        <p>
+                            ул. "Екатерина Симитчиева" 6
+                            <br>ет.1, офис 1
+                            <br>
+                            <br>
+                            <strong>гр. Варна</strong>
+                        </p>
+                    </div>
+                    <!-- /.col-sm-4 -->
+                    <div class="col-sm-4">
+                        <h3><i class="fa fa-phone"></i> Телефон за връзка</h3>
+                        <p class="text-muted">Свържете се с нас по телефон.</p>
+                        <p><strong>052 697 070</strong></p>
+                    </div>
+                    <!-- /.col-sm-4 -->
+                    <div class="col-sm-4">
+                        <h3><i class="fa fa-envelope"></i> Онлайн контакт</h3>
+                        <p class="text-muted">Пишете ни на имейл или използвайте формата ни за контакт.</p>
+                        <ul>
+                            <li><strong><a href="mailto:">primaimoti@abv.bg</a></strong>   </li>
+                            <li><strong><a href="#">Пишете ни</a></strong> - на през нашия сайт</li>
+                        </ul>
+                    </div>
+                    <!-- /.col-sm-4 -->
+                </div>
+                <!-- /.row -->
+
+                <hr>
+                <h2>Пишете ни</h2>
+                <form method="post" asp-controller="Contact" asp-action="Contact">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label asp-for="FirstName"></label>
+                                <input asp-for="FirstName" type="text" class="form-control" id="firstname">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label asp-for="LastName"></label>
+                                <input asp-for="LastName" type="text" class="form-control" id="lastname">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label asp-for="Email"></label>
+                                <input asp-for="Email" type="text" class="form-control" id="email">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label asp-for="Subject"></label>
+                                <input asp-for="Subject" type="text" class="form-control" id="subject">
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label asp-for="Message">Message</label>
+                                <textarea asp-for="Message" id="message" class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 text-center">
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Изпрати</button>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </form>
+            </div>
+        </div>
+        <!-- /.col-md-9 -->
+
+        <div class="col-md-3 ">
+            <div class="blog-asside-right">
+                <div class="panel panel-default sidebar-menu wow fadeInRight animated">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Препоръчани</h3>
+                    </div>
+                    <div class="panel-body recent-property-widget">
+                        <ul>
+                            <li>
+                                <div class="col-md-3 blg-thumb p0">
+                                    <a href="single.html"><img src="~/assets/img/demo/small-property-2.jpg"></a>
+                                    <span class="property-seeker">
+                                        <b class="b-1">A</b>
+                                        <b class="b-2">S</b>
+                                    </span>
+                                </div>
+                                <div class="col-md-8 blg-entry">
+                                    <h6> <a href="single.html">Super nice villa </a></h6>
+                                    <span class="property-price">3000000$</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="col-md-3 blg-thumb p0">
+                                    <a href="single.html"><img src="~/assets/img/demo/small-property-1.jpg"></a>
+                                    <span class="property-seeker">
+                                        <b class="b-1">A</b>
+                                        <b class="b-2">S</b>
+                                    </span>
+                                </div>
+                                <div class="col-md-8 blg-entry">
+                                    <h6> <a href="single.html">Super nice villa </a></h6>
+                                    <span class="property-price">3000000$</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="col-md-3 blg-thumb p0">
+                                    <a href="single.html"><img src="~/assets/img/demo/small-property-3.jpg"></a>
+                                    <span class="property-seeker">
+                                        <b class="b-1">A</b>
+                                        <b class="b-2">S</b>
+                                    </span>
+                                </div>
+                                <div class="col-md-8 blg-entry">
+                                    <h6> <a href="single.html">Super nice villa </a></h6>
+                                    <span class="property-price">3000000$</span>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="col-md-3 blg-thumb p0">
+                                    <a href="single.html"><img src="~/assets/img/demo/small-property-2.jpg"></a>
+                                    <span class="property-seeker">
+                                        <b class="b-1">A</b>
+                                        <b class="b-2">S</b>
+                                    </span>
+                                </div>
+                                <div class="col-md-8 blg-entry">
+                                    <h6> <a href="single.html">Super nice villa </a></h6>
+                                    <span class="property-price">3000000$</span>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="col-md-3 blg-thumb p0">
+                                    <a href="single.html"><img src="~/assets/img/demo/small-property-2.jpg"></a>
+                                    <span class="property-seeker">
+                                        <b class="b-1">A</b>
+                                        <b class="b-2">S</b>
+                                    </span>
+                                </div>
+                                <div class="col-md-8 blg-entry">
+                                    <h6> <a href="single.html">Super nice villa </a></h6>
+                                    <span class="property-price">3000000$</span>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="col-md-3 blg-thumb p0">
+                                    <a href="single.html"><img src="~/assets/img/demo/small-property-2.jpg"></a>
+                                    <span class="property-seeker">
+                                        <b class="b-1">A</b>
+                                        <b class="b-2">S</b>
+                                    </span>
+                                </div>
+                                <div class="col-md-8 blg-entry">
+                                    <h6> <a href="single.html">Super nice villa </a></h6>
+                                    <span class="property-price">3000000$</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
