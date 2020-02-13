@@ -21,10 +21,13 @@ namespace PrimaImoti.ViewModels.ViewModels
         [Display(Name = "Тип имот")]
         public PropertyType Type {get; set;}
 
-        [Display(Name = "Адрес")]
+        [Display(Name = "Точен")]
         public string Adress {get; set;}
 
         [Display(Name = "Дата")]
         public string Date {get; set;}
+
+        [Display(Name = "Имейл")]
+        public string Email {get; set;}
     }
 }
