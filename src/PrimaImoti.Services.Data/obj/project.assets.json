@@ -9044,11 +9044,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\PrimaHomesProject\\PrimaHomes-RealEstateApp\\PrimaImoti.Services.Data\\PrimaImoti.Services.Data.csproj",
+      "projectUniqueName": "G:\\PrimaHomesProject\\PrimaImoti-RealEstate\\src\\PrimaImoti.Services.Data\\PrimaImoti.Services.Data.csproj",
       "projectName": "PrimaImoti.Services.Data",
-      "projectPath": "G:\\PrimaHomesProject\\PrimaHomes-RealEstateApp\\PrimaImoti.Services.Data\\PrimaImoti.Services.Data.csproj",
+      "projectPath": "G:\\PrimaHomesProject\\PrimaImoti-RealEstate\\src\\PrimaImoti.Services.Data\\PrimaImoti.Services.Data.csproj",
       "packagesPath": "C:\\Users\\gaida\\.nuget\\packages\\",
-      "outputPath": "G:\\PrimaHomesProject\\PrimaHomes-RealEstateApp\\PrimaImoti.Services.Data\\obj\\",
+      "outputPath": "G:\\PrimaHomesProject\\PrimaImoti-RealEstate\\src\\PrimaImoti.Services.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -9069,8 +9069,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "G:\\PrimaHomesProject\\PrimaHomes-RealEstateApp\\PrimaImoti\\PrimaImoti.csproj": {
-              "projectPath": "G:\\PrimaHomesProject\\PrimaHomes-RealEstateApp\\PrimaImoti\\PrimaImoti.csproj"
+            "G:\\PrimaHomesProject\\PrimaImoti-RealEstate\\src\\PrimaImoti\\PrimaImoti.csproj": {
+              "projectPath": "G:\\PrimaHomesProject\\PrimaImoti-RealEstate\\src\\PrimaImoti\\PrimaImoti.csproj"
             }
           }
         }

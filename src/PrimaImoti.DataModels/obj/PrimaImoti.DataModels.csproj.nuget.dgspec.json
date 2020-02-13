@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\PrimaHomesProject\\PrimaHomes-RealEstateApp\\PrimaImoti.DataModels\\PrimaImoti.DataModels.csproj": {}
+    "G:\\PrimaHomesProject\\PrimaImoti-RealEstate\\src\\PrimaImoti.DataModels\\PrimaImoti.DataModels.csproj": {}
   },
   "projects": {
-    "G:\\PrimaHomesProject\\PrimaHomes-RealEstateApp\\PrimaImoti.DataModels\\PrimaImoti.DataModels.csproj": {
+    "G:\\PrimaHomesProject\\PrimaImoti-RealEstate\\src\\PrimaImoti.DataModels\\PrimaImoti.DataModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\PrimaHomesProject\\PrimaHomes-RealEstateApp\\PrimaImoti.DataModels\\PrimaImoti.DataModels.csproj",
+        "projectUniqueName": "G:\\PrimaHomesProject\\PrimaImoti-RealEstate\\src\\PrimaImoti.DataModels\\PrimaImoti.DataModels.csproj",
         "projectName": "PrimaImoti.DataModels",
-        "projectPath": "G:\\PrimaHomesProject\\PrimaHomes-RealEstateApp\\PrimaImoti.DataModels\\PrimaImoti.DataModels.csproj",
+        "projectPath": "G:\\PrimaHomesProject\\PrimaImoti-RealEstate\\src\\PrimaImoti.DataModels\\PrimaImoti.DataModels.csproj",
         "packagesPath": "C:\\Users\\gaida\\.nuget\\packages\\",
-        "outputPath": "G:\\PrimaHomesProject\\PrimaHomes-RealEstateApp\\PrimaImoti.DataModels\\obj\\",
+        "outputPath": "G:\\PrimaHomesProject\\PrimaImoti-RealEstate\\src\\PrimaImoti.DataModels\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
