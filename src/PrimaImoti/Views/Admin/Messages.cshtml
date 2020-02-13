@@ -53,49 +53,45 @@
                         <!-- Column -->
                     </div>
                     <div class="table-responsive">
-                        <table id="zero_config" class="table table-striped table-bordered no-wrap">
+                        <table class="table table-striped table-bordered no-wrap">
                             <thead>
                                 <tr>
-                                    <th>Статус</th>
-                                    <th>Тема</th>
-                                    <th>ID</th>
-                                    <th>От</th>
                                     <th>Дата</th>
+                                    <th>От</th>
+                                    <th>Тема</th>
+                                    <th>Имейл</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach (var item in Model)
                                 {
-                                    <tr>
-                                        <td><span class="badge badge-light-warning">In Progress</span></td>
-                                        <td>
-                                            <a href="javascript:void(0)" class="font-weight-medium link">
-                                                @Html.DisplayFor(modelItem => item.Title)
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a href="javascript:void(0)" class="font-bold link">
-                                                @Html.DisplayFor(modelItem => item.Date)
-                                            </a>
-                                        </td>
+                                <tr>
+                                    <td>
+                                        <a class="font-weight-medium link">
+                                            @Html.DisplayFor(modelItem => item.Date)
+                                        </a>
+                                    </td>
+                                    <td>
                                         @Html.DisplayFor(modelItem => item.LastName)
-                                        @Html.DisplayFor(modelItem => item.FirstName),
-                                        <td></td>
-                                        @Html.DisplayFor(modelItem => item.Date)
-                                        <td></td>
+                                        @Html.DisplayFor(modelItem => item.FirstName)
+                                    </td>
+                                    <td>
+                                        <a class="font-bold link">
+                                            @Html.DisplayFor(modelItem => item.Title)
+                                        </a>
+                                    </td>
+                                    <td>
                                         @Html.DisplayFor(modelItem => item.Email)
-                                        <td></td>
-                                    </tr>
+                                    </td>
+                                </tr>
                                 }
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>Status</th>
-                                    <th>Title</th>
-                                    <th>ID</th>
-                                    <th>Product</th>
-                                    <th>Created by</th>
-                                    <th>Date</th>
+                                      <th>Дата</th>
+                                    <th>От</th>
+                                    <th>Тема</th>
+                                    <th>Имейл</th>
                                 </tr>
                             </tfoot>
                         </table>
