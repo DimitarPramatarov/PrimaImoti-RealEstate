@@ -8,3 +8,13 @@ G:\PrimaHomesProject\PrimaImoti.DataModels\obj\Debug\netcoreapp3.0\PrimaImoti.Da
 G:\PrimaHomesProject\PrimaImoti.DataModels\obj\Debug\netcoreapp3.0\PrimaImoti.DataModels.csprojAssemblyReference.cache
 G:\PrimaHomesProject\PrimaImoti.DataModels\bin\Debug\netcoreapp3.0\PrimaImoti.DataModels.runtimeconfig.json
 G:\PrimaHomesProject\PrimaImoti.DataModels\bin\Debug\netcoreapp3.0\PrimaImoti.DataModels.runtimeconfig.dev.json
+G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti.DataModels\bin\Debug\netcoreapp3.0\PrimaImoti.DataModels.deps.json
+G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti.DataModels\bin\Debug\netcoreapp3.0\PrimaImoti.DataModels.runtimeconfig.json
+G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti.DataModels\bin\Debug\netcoreapp3.0\PrimaImoti.DataModels.runtimeconfig.dev.json
+G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti.DataModels\bin\Debug\netcoreapp3.0\PrimaImoti.DataModels.dll
+G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti.DataModels\bin\Debug\netcoreapp3.0\PrimaImoti.DataModels.pdb
+G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti.DataModels\obj\Debug\netcoreapp3.0\PrimaImoti.DataModels.csprojAssemblyReference.cache
+G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti.DataModels\obj\Debug\netcoreapp3.0\PrimaImoti.DataModels.AssemblyInfoInputs.cache
+G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti.DataModels\obj\Debug\netcoreapp3.0\PrimaImoti.DataModels.AssemblyInfo.cs
+G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti.DataModels\obj\Debug\netcoreapp3.0\PrimaImoti.DataModels.dll
+G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti.DataModels\obj\Debug\netcoreapp3.0\PrimaImoti.DataModels.pdb

@@ -1,4 +1,5 @@
-﻿using PrimaImoti.DataModels.Interfaces;
+﻿using PrimaImoti.DataModels.Contact;
+using PrimaImoti.DataModels.Interfaces;
 using System;
 
 namespace PrimaImoti.DataModels.Ad
@@ -19,7 +20,7 @@ namespace PrimaImoti.DataModels.Ad
 
         public byte[] Images { get; set; }
 
-        public Person Person {get; set;}
+        public EstateOwner EstateOwner {get; set;}
 
         public EstateProperty Estate { get; set; }
 
