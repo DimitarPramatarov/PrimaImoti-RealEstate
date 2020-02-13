@@ -52,6 +52,11 @@ namespace PrimaImoti.Areas.Administration.Controllers
                     Date = estateFromDb.CreatedOn.ToString(),
                     Type = estateFromDb.Type,
                     Adress = estateFromDb.Estate.Adress,
+                    FirstName = estateFromDb.Person.FirstName,
+                    LastName = estateFromDb.Person.LastName,
+                    Phone= estateFromDb.Person.Phone,
+                    Email = estateFromDb.Person.Email,
+
                 }).ToList();
 
 
