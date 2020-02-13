@@ -42,17 +42,11 @@ namespace PrimaImoti.Controllers
         [HttpPost]
         public async Task<IActionResult> AddEstate(AddEstateViewModel model)
         {
-            bool aproved = false;
-            var firstName = "";
-            var lastName = "";
-            var email = "";
-            var phone = "";
-
-            firstName = model.Person.FirstName;
-            lastName = model.Person.LastName;
-            email = model.Person.Email;
-            phone = model.Person.Phone;
-            aproved = false;
+          
+            var firstName = model.Person.FirstName;
+            var lastName = model.Person.LastName;
+            var email = model.Person.Email;
+            var phone = model.Person.Phone;
 
 
             EstateOwner owner = new EstateOwner(firstName, lastName, email, phone);
@@ -110,8 +104,8 @@ namespace PrimaImoti.Controllers
                         Estate = estate,
                         Images = images,
                         CreatedOn = DateTime.UtcNow,
-                        Aproved = aproved,
-                        Person = owner,
+                        Aproved = false,
+                        EstateOwner = owner,
                     };
 
                     if (!ModelState.IsValid)
@@ -152,23 +146,6 @@ namespace PrimaImoti.Controllers
                 }).ToList();
 
             return View(allEstates);
-
-        }
-
-
-        [HttpPost]
-        public async Task<IActionResult> CreateProperty(AddEstateViewModel adModel)
-        {
-
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
-
-            await _context.SaveChangesAsync();
-
-            //Create view for added Ad.
-            return View();
 
         }
     }
