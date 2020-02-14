@@ -4,12 +4,11 @@ using System.ComponentModel.DataAnnotations;
 namespace PrimaImoti.ViewModels.ViewModels
 {
     public class WaitingEstatesViewModel
-    {
-        [Display(Name = "Статус")]
-        public bool Aproved {get; set;}
+    { 
+        [Display(Name = "ID")]
+        public int Id {get; set;}
 
         [Display(Name = "Име")]
-
         public string FirstName {get; set;}
 
         [Display(Name = "Фамилия")]
