@@ -347,3 +347,7 @@ healthchecksdb
 src/PrimaImoti.DataModels/obj/Release/netcoreapp3.0/PrimaImoti.DataModels.assets.cache
 *.cache
 src/PrimaImoti.DataModels/obj/PrimaImoti.DataModels.csproj.nuget.cache
+src/PrimaImoti.Services/obj/project.assets.json
+*.json
+src/PrimaImoti.Services/obj/project.assets.json
+src/PrimaImoti.DataModels/bin/Debug/netcoreapp3.0/PrimaImoti.DataModels.dll
