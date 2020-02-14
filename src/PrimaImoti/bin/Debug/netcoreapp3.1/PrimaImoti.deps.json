@@ -30,8 +30,10 @@
           "Microsoft.EntityFrameworkCore.Tools": "3.1.1",
           "Microsoft.Extensions.Logging.Debug": "3.1.1",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.1",
+          "PrimaImoti.Data": "1.0.0",
           "PrimaImoti.DataModels": "1.0.0",
           "PrimaImoti.Services": "1.0.0",
+          "PrimaImoti.Services.Data": "1.0.0",
           "PrimaImoti.ViewModels": "1.0.0",
           "System.ComponentModel": "4.3.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
@@ -2338,6 +2340,18 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
+      "PrimaImoti.Data/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.1",
+          "PrimaImoti.DataModels": "1.0.0"
+        },
+        "runtime": {
+          "PrimaImoti.Data.dll": {}
+        },
+        "compile": {
+          "PrimaImoti.Data.dll": {}
+        }
+      },
       "PrimaImoti.DataModels/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Identity": "2.2.0",
@@ -2353,6 +2367,7 @@
       },
       "PrimaImoti.Services/1.0.0": {
         "dependencies": {
+          "PrimaImoti.Data": "1.0.0",
           "PrimaImoti.DataModels": "1.0.0"
         },
         "runtime": {
@@ -2360,6 +2375,19 @@
         },
         "compile": {
           "PrimaImoti.Services.dll": {}
+        }
+      },
+      "PrimaImoti.Services.Data/1.0.0": {
+        "dependencies": {
+          "PrimaImoti.Data": "1.0.0",
+          "PrimaImoti.DataModels": "1.0.0",
+          "PrimaImoti.ViewModels": "1.0.0"
+        },
+        "runtime": {
+          "PrimaImoti.Services.Data.dll": {}
+        },
+        "compile": {
+          "PrimaImoti.Services.Data.dll": {}
         }
       },
       "PrimaImoti.ViewModels/1.0.0": {
@@ -5240,12 +5268,22 @@
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
+    "PrimaImoti.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "PrimaImoti.DataModels/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "PrimaImoti.Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PrimaImoti.Services.Data/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

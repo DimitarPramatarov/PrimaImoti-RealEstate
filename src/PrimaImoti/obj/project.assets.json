@@ -2865,6 +2865,20 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "PrimaImoti.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.1",
+          "PrimaImoti.DataModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PrimaImoti.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PrimaImoti.Data.dll": {}
+        }
+      },
       "PrimaImoti.DataModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
@@ -2884,6 +2898,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "PrimaImoti.Data": "1.0.0",
           "PrimaImoti.DataModels": "1.0.0"
         },
         "compile": {
@@ -2891,6 +2906,21 @@
         },
         "runtime": {
           "bin/placeholder/PrimaImoti.Services.dll": {}
+        }
+      },
+      "PrimaImoti.Services.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "PrimaImoti.Data": "1.0.0",
+          "PrimaImoti.DataModels": "1.0.0",
+          "PrimaImoti.ViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PrimaImoti.Services.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PrimaImoti.Services.Data.dll": {}
         }
       },
       "PrimaImoti.ViewModels/1.0.0": {
@@ -9055,6 +9085,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "PrimaImoti.Data/1.0.0": {
+      "type": "project",
+      "path": "../PrimaImoti.Data/PrimaImoti.Data.csproj",
+      "msbuildProject": "../PrimaImoti.Data/PrimaImoti.Data.csproj"
+    },
     "PrimaImoti.DataModels/1.0.0": {
       "type": "project",
       "path": "../PrimaImoti.DataModels/PrimaImoti.DataModels.csproj",
@@ -9064,6 +9099,11 @@
       "type": "project",
       "path": "../PrimaImoti.Services/PrimaImoti.Services.csproj",
       "msbuildProject": "../PrimaImoti.Services/PrimaImoti.Services.csproj"
+    },
+    "PrimaImoti.Services.Data/1.0.0": {
+      "type": "project",
+      "path": "../PrimaImoti.Services.Data/PrimaImoti.Services.Data.csproj",
+      "msbuildProject": "../PrimaImoti.Services.Data/PrimaImoti.Services.Data.csproj"
     },
     "PrimaImoti.ViewModels/1.0.0": {
       "type": "project",
@@ -9079,8 +9119,10 @@
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.1",
       "Microsoft.Extensions.Logging.Debug >= 3.1.1",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.1",
+      "PrimaImoti.Data >= 1.0.0",
       "PrimaImoti.DataModels >= 1.0.0",
       "PrimaImoti.Services >= 1.0.0",
+      "PrimaImoti.Services.Data >= 1.0.0",
       "PrimaImoti.ViewModels >= 1.0.0",
       "System.ComponentModel >= 4.3.0"
     ]
@@ -9120,6 +9162,12 @@
           "projectReferences": {
             "G:\\PrimaHomesProject\\PrimaImoti-RealEstate\\src\\PrimaImoti.DataModels\\PrimaImoti.DataModels.csproj": {
               "projectPath": "G:\\PrimaHomesProject\\PrimaImoti-RealEstate\\src\\PrimaImoti.DataModels\\PrimaImoti.DataModels.csproj"
+            },
+            "G:\\PrimaHomesProject\\PrimaImoti-RealEstate\\src\\PrimaImoti.Data\\PrimaImoti.Data.csproj": {
+              "projectPath": "G:\\PrimaHomesProject\\PrimaImoti-RealEstate\\src\\PrimaImoti.Data\\PrimaImoti.Data.csproj"
+            },
+            "G:\\PrimaHomesProject\\PrimaImoti-RealEstate\\src\\PrimaImoti.Services.Data\\PrimaImoti.Services.Data.csproj": {
+              "projectPath": "G:\\PrimaHomesProject\\PrimaImoti-RealEstate\\src\\PrimaImoti.Services.Data\\PrimaImoti.Services.Data.csproj"
             },
             "G:\\PrimaHomesProject\\PrimaImoti-RealEstate\\src\\PrimaImoti.Services\\PrimaImoti.Services.csproj": {
               "projectPath": "G:\\PrimaHomesProject\\PrimaImoti-RealEstate\\src\\PrimaImoti.Services\\PrimaImoti.Services.csproj"

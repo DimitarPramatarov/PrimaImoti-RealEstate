@@ -6,11 +6,14 @@ using PrimaImoti.ViewModels.ViewModels;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using PrimaImoti.Areas.Administration;
+using PrimaImoti.Controllers;
 
 namespace PrimaImoti.Areas.Administration.Controllers
 {
-    [Authorize("Admin")]
-    public class AdminController : Controller
+    [Authorize(Roles = "Admin")]
+    [Area("Administration")]
+    public class AdminController : BaseController
     {
         private readonly ApplicationDbContext _context;
 
@@ -22,7 +25,7 @@ namespace PrimaImoti.Areas.Administration.Controllers
         [HttpGet]
         public IActionResult DashBoard()
         {
-            return View();
+            return View("DashBoard");
         }
 
         [HttpGet]

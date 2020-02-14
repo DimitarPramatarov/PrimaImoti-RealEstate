@@ -24,3 +24,5 @@ G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti.Services\obj\Debug\net
 G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti.Services\obj\Debug\netcoreapp3.1\PrimaImoti.Services.csproj.CopyComplete
 G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti.Services\obj\Debug\netcoreapp3.1\PrimaImoti.Services.dll
 G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti.Services\obj\Debug\netcoreapp3.1\PrimaImoti.Services.pdb
+G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti.Services\bin\Debug\netcoreapp3.1\PrimaImoti.Data.dll
+G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti.Services\bin\Debug\netcoreapp3.1\PrimaImoti.Data.pdb

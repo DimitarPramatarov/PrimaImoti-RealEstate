@@ -513,3 +513,7 @@ G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti\obj\Debug\netcoreapp3.
 G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti\obj\Debug\netcoreapp3.1\Razor\Areas\Administration\Views\Admin\DashBoard.cshtml.g.cs
 G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti\obj\Debug\netcoreapp3.1\Razor\Areas\Administration\Views\Admin\Messages.cshtml.g.cs
 G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti\obj\Debug\netcoreapp3.1\Razor\Areas\Administration\Views\Admin\WaitingEstates.cshtml.g.cs
+G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti\bin\Debug\netcoreapp3.1\PrimaImoti.Data.dll
+G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti\bin\Debug\netcoreapp3.1\PrimaImoti.Services.Data.dll
+G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti\bin\Debug\netcoreapp3.1\PrimaImoti.Data.pdb
+G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti\bin\Debug\netcoreapp3.1\PrimaImoti.Services.Data.pdb

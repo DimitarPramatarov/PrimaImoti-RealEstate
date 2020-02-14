@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PrimaImoti.DataModels\PrimaImoti.DataModels.csproj" />
+    <ProjectReference Include="..\PrimaImoti.Data\PrimaImoti.Data.csproj" />
   </ItemGroup>
 
 </Project>
