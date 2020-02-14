@@ -5,6 +5,7 @@ using PrimaImoti.ViewModels;
 using PrimaImoti.ViewModels.ViewModels;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace PrimaImoti.Areas.Administration.Controllers
 {
@@ -49,18 +50,38 @@ namespace PrimaImoti.Areas.Administration.Controllers
                 .Where(estate => estate.Aproved == false)
                 .Select(estateFromDb => new WaitingEstatesViewModel
                 {
+                    
                     Date = estateFromDb.CreatedOn.ToString(),
                     Type = estateFromDb.Type,
                     Adress = estateFromDb.Estate.Adress,
                     FirstName = estateFromDb.EstateOwner.FirstName,
                     LastName = estateFromDb.EstateOwner.LastName,
-                    Phone= estateFromDb.EstateOwner.Phone,
+                    Phone = estateFromDb.EstateOwner.Phone,
                     Email = estateFromDb.EstateOwner.Email,
+                    Id = estateFromDb.Id,
 
                 }).ToList();
 
 
             return View(waitingEstates);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AproveEstate(int id)
+        {
+            var aproval = _context.Ads.FirstOrDefault(x => x.Id == id);
+
+            if (aproval == null)
+            {
+                return this.NotFound();
+            }
+
+            aproval.Aproved = true;
+            await _context.SaveChangesAsync();
+
+
+            return View();
+
         }
 
     }
