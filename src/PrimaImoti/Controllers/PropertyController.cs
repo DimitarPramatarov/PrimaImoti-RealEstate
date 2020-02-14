@@ -12,7 +12,6 @@ using PrimaImoti.ViewModels;
 using PrimaImoti.DataModels.Ad;
 using PrimaImoti.DataModels.Estate;
 using System;
-using PrimaImoti.DataModels.Contact;
 
 namespace PrimaImoti.Controllers
 {
@@ -49,7 +48,13 @@ namespace PrimaImoti.Controllers
             var phone = model.Person.Phone;
 
 
-            EstateOwner owner = new EstateOwner(firstName, lastName, email, phone);
+            Person person = new Person
+            {
+               FirstName = firstName,
+               LastName = lastName,
+               Email = email,
+               Phone = phone,
+            };
 
             EstateFeatures estateFeatures = new EstateFeatures
             {
@@ -105,7 +110,7 @@ namespace PrimaImoti.Controllers
                         Images = images,
                         CreatedOn = DateTime.UtcNow,
                         Aproved = false,
-                        EstateOwner = owner,
+                        Person = person,
                     };
 
                     if (!ModelState.IsValid)

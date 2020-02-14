@@ -79,12 +79,19 @@
                                 <input asp-for="Subject" type="text" class="form-control" id="subject">
                             </div>
                         </div>
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label asp-for="Phone"></label>
+                                <textarea asp-for="Phone" id="message" class="form-control"></textarea>
+                            </div>
+                        </div>
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label asp-for="Message">Message</label>
                                 <textarea asp-for="Message" id="message" class="form-control"></textarea>
                             </div>
                         </div>
+
                         <div class="col-sm-12 text-center">
                             <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Изпрати</button>
                         </div>

@@ -2,17 +2,14 @@
 {
     public class Message
     {
-
-        public Message(string title, string newMessage)
-        {
-            this.Title = title;
-            this.NewMessage = newMessage;
-        }
-
         public int Id { get; set; }
 
         public string Title { get; set; }
 
-        public string NewMessage { get; set; }
+        public string Content { get; set; }
+
+        public string Created {get; set;}
+
+        public  Person Sender {get; set;}
     }
 }

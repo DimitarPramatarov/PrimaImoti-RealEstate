@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
+using PrimaImoti.Common;
 
 namespace PrimaImoti.ViewModels
 {
     public class ContactViewModel
     {
+
         [Display(Name = "Тема")]
         [DataType(DataType.Text)]
-        [Required(ErrorMessage = "Полето е задължително!")]
+        [Required(ErrorMessage =  "Полето е задължително!")]
         public string Subject {get; set;}
 
         [Display(Name = "Име")]
@@ -31,5 +30,10 @@ namespace PrimaImoti.ViewModels
         [DataType(DataType.MultilineText)]
         [Required(ErrorMessage = "Полето е задължително!")]
         public string Message {get; set;}
+
+        [Required(ErrorMessage = "Моля въведете телефон за връзка!")]
+        [Display(Name = "Телефон")]
+        [Phone]
+        public string Phone {get; set;}
     }
 }

@@ -60,6 +60,7 @@
                                     <th>От</th>
                                     <th>Тема</th>
                                     <th>Имейл</th>
+                                    <th>Телефон</th>
                                     <th>Съобщение</th>
                                 </tr>
                             </thead>
@@ -87,6 +88,9 @@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.Message)
                                     </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Phone)
+                                    </td>
                                 </tr>
                                 }
                             </tbody>
@@ -96,6 +100,7 @@
                                     <th>От</th>
                                     <th>Тема</th>
                                     <th>Имейл</th>
+                                    <th>Телефон</th>
                                     <th>Съобщение</th>
                                 </tr>
                             </tfoot>

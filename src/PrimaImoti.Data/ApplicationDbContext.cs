@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using PrimaImoti.DataModels;
 using PrimaImoti.DataModels.Ad;
-using PrimaImoti.DataModels.Contact;
 using PrimaImoti.DataModels.Estate;
 
 namespace PrimaImoti.Data
@@ -18,8 +17,6 @@ namespace PrimaImoti.Data
         public DbSet<Person> Persons { get; set; }
 
         public DbSet<Message> Messages { get; set; }
-
-        public DbSet<Contact> Contacts {get; set;}
 
         public DbSet<EstateFeatures> EsteateFeatures {get; set;} 
        

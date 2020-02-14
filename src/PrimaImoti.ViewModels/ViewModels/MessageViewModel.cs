@@ -16,6 +16,9 @@ namespace PrimaImoti.ViewModels
         [DataType(DataType.Text)]
         public string LastName {get; set;}
 
+        [Display(Name = "Телефон")]
+        public string Phone {get; set;}
+
         [Display(Name = "Email")]
         public string Email {get; set;}
 
