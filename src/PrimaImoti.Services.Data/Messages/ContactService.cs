@@ -24,7 +24,7 @@ namespace PrimaImoti.Services.Data
 
         public async Task SendMessageAsync(string firstName, string lastName, string email, string newMessage, string title)
         {
-            var created = DateTime.Now;
+            var created = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
 
             var sender = new Person(firstName, lastName, email);
 

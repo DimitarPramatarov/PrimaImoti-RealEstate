@@ -7,7 +7,7 @@ namespace PrimaImoti.DataModels.Contact
     public class Contact
     {
 
-        public Contact(DateTime created, Person sender, Message message)
+        public Contact(string created, Person sender, Message message)
         {
             this.Created = created;
             this.Sender = sender;
@@ -20,7 +20,7 @@ namespace PrimaImoti.DataModels.Contact
 
         public int Id {get; set;}
 
-        public DateTime Created {get; set;}
+        public string Created {get; set;}
 
         public Person Sender {get; set;}
 
