@@ -489,9 +489,6 @@ G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti\obj\Debug\netcoreapp3.
 G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
-G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti\obj\Debug\netcoreapp3.1\Razor\Views\Admin\DashBoard.cshtml.g.cs
-G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Messages.cshtml.g.cs
-G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti\obj\Debug\netcoreapp3.1\Razor\Views\Admin\WaitingEstates.cshtml.g.cs
 G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti\obj\Debug\netcoreapp3.1\Razor\Views\Contact\Contact.cshtml.g.cs
 G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti\obj\Debug\netcoreapp3.1\Razor\Views\Contact\Messages.cshtml.g.cs
 G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
@@ -513,3 +510,6 @@ G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti\obj\Debug\netcoreapp3.
 G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti\obj\Debug\netcoreapp3.1\PrimaImoti.csproj.CopyComplete
 G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti\obj\Debug\netcoreapp3.1\PrimaImoti.dll
 G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti\obj\Debug\netcoreapp3.1\PrimaImoti.pdb
+G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti\obj\Debug\netcoreapp3.1\Razor\Areas\Administration\Views\Admin\DashBoard.cshtml.g.cs
+G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti\obj\Debug\netcoreapp3.1\Razor\Areas\Administration\Views\Admin\Messages.cshtml.g.cs
+G:\PrimaHomesProject\PrimaImoti-RealEstate\src\PrimaImoti\obj\Debug\netcoreapp3.1\Razor\Areas\Administration\Views\Admin\WaitingEstates.cshtml.g.cs
