@@ -1,4 +1,4 @@
-﻿using PrimaImoti.ViewModels;
+﻿using PrimaImoti.Services.Data.Messages.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -8,6 +8,7 @@ namespace PrimaImoti.Services.Data
     {
         Task SendMessageAsync(string firstName, string lastName, string email, string content, string subject);
 
-        Task<IEnumerable<ContactViewModel>> AllMessages(int page = 1);
+        Task Messages();
+
     }
 }
