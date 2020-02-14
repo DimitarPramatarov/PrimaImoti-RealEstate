@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimaImoti.ViewModels", "..
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimaImoti.Services.Data", "..\PrimaImoti.Services.Data\PrimaImoti.Services.Data.csproj", "{E50A8BBB-D9A1-4FB5-B278-03D53A33CB55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimaImoti.Data", "..\PrimaImoti.Data\PrimaImoti.Data.csproj", "{2CFB3A3E-CD39-4300-9228-58E316ECF858}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimaImoti.Data", "..\PrimaImoti.Data\PrimaImoti.Data.csproj", "{2CFB3A3E-CD39-4300-9228-58E316ECF858}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimaImoti.Common", "..\PrimaImoti.Common\PrimaImoti.Common.csproj", "{1D7F8329-B3BD-41B3-8F0D-F09F8D56B2B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{2CFB3A3E-CD39-4300-9228-58E316ECF858}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CFB3A3E-CD39-4300-9228-58E316ECF858}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CFB3A3E-CD39-4300-9228-58E316ECF858}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D7F8329-B3BD-41B3-8F0D-F09F8D56B2B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D7F8329-B3BD-41B3-8F0D-F09F8D56B2B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D7F8329-B3BD-41B3-8F0D-F09F8D56B2B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D7F8329-B3BD-41B3-8F0D-F09F8D56B2B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
