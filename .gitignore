@@ -344,3 +344,6 @@ healthchecksdb
 /Web/PressCenters.Web/appsettings.Production.json
 *.min.css
 *.min.js
+src/PrimaImoti.DataModels/obj/Release/netcoreapp3.0/PrimaImoti.DataModels.assets.cache
+*.cache
+src/PrimaImoti.DataModels/obj/PrimaImoti.DataModels.csproj.nuget.cache
