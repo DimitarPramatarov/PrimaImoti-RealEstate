@@ -32,6 +32,11 @@ namespace PrimaImoti.Services.Data
 
             var contact = new Contact(created, sender, message);
 
+            if(contact == null)
+            {
+                throw new ArgumentException();
+            }
+
             await this.context.AddAsync(contact);
             await this.context.SaveChangesAsync();
         }

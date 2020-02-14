@@ -60,6 +60,7 @@
                                     <th>От</th>
                                     <th>Тема</th>
                                     <th>Имейл</th>
+                                    <th>Съобщение</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -83,15 +84,19 @@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.Email)
                                     </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Message)
+                                    </td>
                                 </tr>
                                 }
                             </tbody>
                             <tfoot>
                                 <tr>
-                                      <th>Дата</th>
+                                    <th>Дата</th>
                                     <th>От</th>
                                     <th>Тема</th>
                                     <th>Имейл</th>
+                                    <th>Съобщение</th>
                                 </tr>
                             </tfoot>
                         </table>
