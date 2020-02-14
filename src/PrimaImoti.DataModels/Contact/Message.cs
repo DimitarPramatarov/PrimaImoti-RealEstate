@@ -2,11 +2,17 @@
 {
     public class Message
     {
-     
-        public int Id {get; set;}
 
-        public string Title {get; set;}
+        public Message(string title, string newMessage)
+        {
+            this.Title = title;
+            this.NewMessage = newMessage;
+        }
 
-        public string NewMessage {get; set;}
+        public int Id { get; set; }
+
+        public string Title { get; set; }
+
+        public string NewMessage { get; set; }
     }
 }
