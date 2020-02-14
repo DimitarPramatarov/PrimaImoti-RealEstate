@@ -72,22 +72,7 @@ namespace PrimaImoti
                 {
                     context.Database.EnsureCreated();
 
-                 // context.Roles.Add(new IdentityRole
-                 // {
-                 //     Name = "Admin",
-                 //     NormalizedName = "ADMIN"
-                 // });
-                 //
-                 // context.SaveChangesAsync();
-                 //
-                 //
-                 // context.Roles.Add(new IdentityRole
-                 // {
-                 //     Name = "User",
-                 //     NormalizedName = "User"
-                 // });
-                 //
-                 // context.SaveChangesAsync();
+                
                 }
             }
 
@@ -118,6 +103,11 @@ namespace PrimaImoti
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
+
+                endpoints.MapControllerRoute(
+                    name: "Admin",
+                    pattern: "{controller=AdminController}/{action=DashBoard}/{id?}");
                 endpoints.MapRazorPages();
             });
         }

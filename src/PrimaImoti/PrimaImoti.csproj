@@ -32,4 +32,9 @@
     <ProjectReference Include="..\PrimaImoti.ViewModels\PrimaImoti.ViewModels.csproj" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Folder Include="Areas\Administration\" />
+  </ItemGroup>
+
 </Project>
