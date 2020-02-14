@@ -1,0 +1,40 @@
+﻿@model IEnumerable<PrimaImoti.ViewModels.ViewModels.WaitingEstatesViewModel>
+@{
+    Layout = "_AdminLayout";
+}
+<div class="container">
+    <form asp-controller="Admin" asp-action="AproveEstate" method="post">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="auto"></th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Име</th>
+                    <th scope="col">Фамилия</th>
+                    <th scope="col">Телефон</th>
+                    <th scope="col">Вид Имот</th>
+                    <th scope="col">Адрес</th>
+                    <th scope="col">Дата</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="auto">
+                        <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                        <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.LastName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Phone)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Type)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Adress)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Date)</td>
+                        <td>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+       
+    </form>
+</div>
