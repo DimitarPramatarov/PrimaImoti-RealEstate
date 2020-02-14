@@ -1,27 +1,21 @@
-﻿namespace PrimaImoti.Controllers
-{
-    using Microsoft.AspNetCore.Authorization;
-    using Microsoft.AspNetCore.Mvc;
-    using PrimaImoti.Data;
-    using PrimaImoti.DataModels;
-    using PrimaImoti.DataModels.Contact;
-    using PrimaImoti.Services;
-    using System.Globalization;
-    using PrimaImoti.ViewModels;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using PrimaImoti.Data;
+using PrimaImoti.Services.Data;
+using PrimaImoti.ViewModels;
+using System.Threading.Tasks;
 
+namespace PrimaImoti.Controllers
+{
     [AllowAnonymous]
     public class ContactController : Controller
     {
 
-        private readonly ApplicationDbContext context;
+        private readonly IContactService contact;
 
-        public ContactController(ApplicationDbContext context)
+        public ContactController(IContactService contact)
         {
-            this.context = context;
+            this.contact = contact;
         }
 
         [AllowAnonymous]
@@ -35,39 +29,15 @@
         [HttpPost]
         public async Task<IActionResult> Contact(ContactViewModel viewModel)
         {
-            var firstName = viewModel.FirstName;
-            var lastName = viewModel.LastName;
-            var email = viewModel.Email;
 
-          Person person = new Person(firstName, lastName, email);
-          
-          Message message = new Message
-          {
-              Title = viewModel.Subject,
-              NewMessage = viewModel.Message
-          };
-          
-           DateTime localDate = DateTime.Now;
-
-          Contact contact = new Contact
-          {
-              Sender = person,
-              Message = message,
-              Created = localDate,
-          };
-
+            await contact.SendMessageAsync(viewModel.FirstName, viewModel.LastName, 
+                viewModel.Email, viewModel.Message, viewModel.Subject);
 
             if (!ModelState.IsValid)
             {
                 return View();
             }
-          //
-          // IEmailSender sender = new EmailSender();
-          //
-          //  sender.SendMail(viewModel.Message, viewModel.Email, viewModel.Subject, viewModel.FirstName, viewModel.LastName);
-          //
-            await context.Contacts.AddAsync(contact);
-            await context.SaveChangesAsync();
+        
 
             return Redirect("/");
 
