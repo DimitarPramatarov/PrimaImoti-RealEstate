@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using PrimaImoti.Areas.Administration;
 using PrimaImoti.Controllers;
+using PrimaImoti.Services.Data;
 
 namespace PrimaImoti.Areas.Administration.Controllers
 {
@@ -15,11 +16,13 @@ namespace PrimaImoti.Areas.Administration.Controllers
     public class AdminController : BaseController
     {
         private readonly ApplicationDbContext _context;
-
-        public AdminController(ApplicationDbContext context)
+        private readonly IContactService contactService;
+        public AdminController(ApplicationDbContext context,
+            IContactService contactService)
         {
             _context = context;
-        }
+            this.contactService = contactService;
+                   }
 
         [HttpGet]
         public IActionResult DashBoard()
@@ -30,20 +33,11 @@ namespace PrimaImoti.Areas.Administration.Controllers
         [HttpGet]
         public IActionResult Messages()
         {
-            List<MessagesViewModel> messages = _context.Contacts
-                .Select(messagesFromDb => new MessagesViewModel
-                {
-                    Title = messagesFromDb.Message.Title,
-                    FirstName = messagesFromDb.Sender.FirstName,
-                    LastName = messagesFromDb.Sender.LastName,
-                    Email = messagesFromDb.Sender.Email,
-                    Message = messagesFromDb.Message.NewMessage,
-                    Date = messagesFromDb.Created.ToString(),
-
-                }).ToList();
+            var messages = contactService.Messages();
 
             return View(messages);
         }
+
 
         [HttpGet]
         public IActionResult WaitingEstates()
@@ -56,10 +50,10 @@ namespace PrimaImoti.Areas.Administration.Controllers
                     Date = estateFromDb.CreatedOn.ToString(),
                     Type = estateFromDb.Type,
                     Adress = estateFromDb.Estate.Adress,
-                    FirstName = estateFromDb.EstateOwner.FirstName,
-                    LastName = estateFromDb.EstateOwner.LastName,
-                    Phone = estateFromDb.EstateOwner.Phone,
-                    Email = estateFromDb.EstateOwner.Email,
+                    FirstName = estateFromDb.Person.FirstName,
+                    LastName = estateFromDb.Person.LastName,
+                    Phone = estateFromDb.Person.Phone,
+                    Email = estateFromDb.Person.Email,
                     Id = estateFromDb.Id,
 
                 }).ToList();
