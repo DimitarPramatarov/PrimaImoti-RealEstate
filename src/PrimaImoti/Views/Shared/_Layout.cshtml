@@ -82,6 +82,11 @@
                         <button class="navbar-btn nav-button wow fadeInRight" onclick="window.open('/Property/AddEstate')">Добави Имот</button>
                     </div>
                     <ul class="main-nav nav navbar-nav navbar-right">
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" asp-controller="Admin" asp-action="DashBoard">Админ панел</a></li>
+
+                        }
 
                         <li>
                             <a asp-controller="Home" asp-action="Index">Начало</a>

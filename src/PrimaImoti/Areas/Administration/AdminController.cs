@@ -1,12 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PrimaImoti.Data;
-using PrimaImoti.ViewModels;
 using PrimaImoti.ViewModels.ViewModels;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using PrimaImoti.Areas.Administration;
 using PrimaImoti.Controllers;
 using PrimaImoti.Services.Data;
 
