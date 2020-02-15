@@ -9,6 +9,7 @@
     using System.Threading.Tasks;
     using PrimaImoti.Services.Mappings;
     using Microsoft.EntityFrameworkCore;
+    using AutoMapper.QueryableExtensions;
 
     public class ContactService : IContactService
     {
@@ -20,11 +21,11 @@
             this.context = context;
         }
 
-        public async Task<IEnumerable<MessageDetailsServiceModel>> Messages()
+        public async Task<IEnumerable<MessageDetailsServiceModel>> AllMessages()
             => await this.context
             .Messages
-            .OrderByDescending(x => x.Created)
             .To<MessageDetailsServiceModel>()
+            .OrderByDescending(x => x.Created)
             .ToListAsync();
 
          //  await this.context.Messages
