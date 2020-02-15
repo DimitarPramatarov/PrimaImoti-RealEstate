@@ -8,7 +8,7 @@ namespace PrimaImoti.Services.Data
     {
         Task SendMessageAsync(string firstName, string lastName, string email, string content, string subject);
 
-        Task Messages();
+        Task<IEnumerable<MessageDetailsServiceModel>> Messages();
 
     }
 }

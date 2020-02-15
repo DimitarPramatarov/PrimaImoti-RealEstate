@@ -1,13 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
-using PrimaImoti.Data;
-using PrimaImoti.DataModels;
-using PrimaImoti.ViewModels;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace PrimaImoti.Services.Data
+﻿namespace PrimaImoti.Services.Data
 {
+    using PrimaImoti.Data;
+    using PrimaImoti.DataModels;
+    using PrimaImoti.Services.Data.Messages.Models;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using PrimaImoti.Services.Mappings;
+    using Microsoft.EntityFrameworkCore;
+
     public class ContactService : IContactService
     {
 
@@ -18,23 +20,26 @@ namespace PrimaImoti.Services.Data
             this.context = context;
         }
 
-        public async Task Messages()
-        {
+        public async Task<IEnumerable<MessageDetailsServiceModel>> Messages()
+            => await this.context
+            .Messages
+            .OrderByDescending(x => x.Created)
+            .To<MessageDetailsServiceModel>()
+            .ToListAsync();
 
-           await this.context.Messages
-            .OrderByDescending(a => a.Created)
-            .Select(message => new  MessagesViewModel
-            {
-                FirstName = message.Sender.FirstName,
-                LastName = message.Sender.LastName,
-                Email = message.Sender.Email,
-                Date = message.Created,
-                Phone = message.Sender.Phone,
-                Message = message.Content,
-                Title = message.Title,
-                
-            }).ToListAsync();
-        }
+         //  await this.context.Messages
+         //   .OrderByDescending(a => a.Created)
+         //   .Select(message => new  MessagesViewModel
+         //   {
+         //       FirstName = message.Sender.FirstName,
+         //       LastName = message.Sender.LastName,
+         //       Email = message.Sender.Email,
+         //       Date = message.Created,
+         //       Phone = message.Sender.Phone,
+         //       Message = message.Content,
+         //       Title = message.Title,
+         //       
+         //   }).ToListAsync();
 
 
 

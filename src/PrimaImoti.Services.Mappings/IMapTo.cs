@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PrimaImoti.Services.Mappings
 {
-    public interface IMapTo<TModel>
+    public interface IMapTo<T>
     {
 
     }
