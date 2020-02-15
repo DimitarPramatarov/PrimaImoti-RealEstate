@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using PrimaImoti.Controllers;
 using PrimaImoti.Services.Data;
+using PrimaImoti.ViewModels;
 
 namespace PrimaImoti.Areas.Administration.Controllers
 {
@@ -20,7 +21,7 @@ namespace PrimaImoti.Areas.Administration.Controllers
         {
             _context = context;
             this.contactService = contactService;
-                   }
+        }
 
         [HttpGet]
         public IActionResult DashBoard()
@@ -29,11 +30,15 @@ namespace PrimaImoti.Areas.Administration.Controllers
         }
 
         [HttpGet]
-        public IActionResult Messages()
+        public async Task<IActionResult> Messages()
         {
-            var messages = contactService.Messages();
 
-            return View(messages);
+            var model = new MessagesViewModel
+            {
+                Messages = await this.contactService.AllMessages()
+            };
+
+            return View(model);
         }
 
 
@@ -44,7 +49,7 @@ namespace PrimaImoti.Areas.Administration.Controllers
                 .Where(estate => estate.Aproved == false)
                 .Select(estateFromDb => new WaitingEstatesViewModel
                 {
-                    
+
                     Date = estateFromDb.CreatedOn.ToString(),
                     Type = estateFromDb.Type,
                     Adress = estateFromDb.Estate.Adress,

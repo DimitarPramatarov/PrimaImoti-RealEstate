@@ -1,4 +1,4 @@
-﻿@model IEnumerable<PrimaImoti.ViewModels.MessagesViewModel>
+﻿@model PrimaImoti.ViewModels.MessagesViewModel
 
 @{
     Layout = "_AdminLayout";
@@ -65,17 +65,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (var item in Model)
+                                @foreach (var item in Model.Messages)
                                 {
                                 <tr>
                                     <td>
                                         <a class="font-weight-medium link">
-                                            @Html.DisplayFor(modelItem => item.Date)
+                                            @Html.DisplayFor(modelItem => item.Created)
                                         </a>
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.LastName)
                                         @Html.DisplayFor(modelItem => item.FirstName)
+                                        @Html.DisplayFor(modelItem => item.LastName)
                                     </td>
                                     <td>
                                         <a class="font-bold link">
@@ -86,10 +86,10 @@
                                         @Html.DisplayFor(modelItem => item.Email)
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.Message)
+                                        @Html.DisplayFor(modelItem => item.Phone)
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.Phone)
+                                        @Html.DisplayFor(modelItem => item.Content)
                                     </td>
                                 </tr>
                                 }

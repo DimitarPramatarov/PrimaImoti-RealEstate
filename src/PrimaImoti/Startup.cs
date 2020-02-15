@@ -9,6 +9,9 @@ using Microsoft.Extensions.Hosting;
 using PrimaImoti.DataModels;
 using PrimaImoti.Services.Identity;
 using PrimaImoti.Services.Data;
+using PrimaImoti.Services.Mappings;
+using PrimaImoti.Models;
+using System.Reflection;
 
 namespace PrimaImoti
 {
@@ -64,6 +67,7 @@ namespace PrimaImoti
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, UserManager<PrimaImotiUser> userManager, RoleManager<IdentityRole> roleManager)
         {
+            AutoMapperConfig.RegisterMappings(typeof(ErrorViewModel).GetTypeInfo().Assembly);
 
             using (var serviceScope = app.ApplicationServices.CreateScope())
             {

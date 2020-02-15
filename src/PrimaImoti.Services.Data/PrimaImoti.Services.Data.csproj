@@ -9,7 +9,6 @@
     <ProjectReference Include="..\PrimaImoti.DataModels\PrimaImoti.DataModels.csproj" />
     <ProjectReference Include="..\PrimaImoti.Data\PrimaImoti.Data.csproj" />
     <ProjectReference Include="..\PrimaImoti.Services.Mappings\PrimaImoti.Services.Mappings.csproj" />
-    <ProjectReference Include="..\PrimaImoti.ViewModels\PrimaImoti.ViewModels.csproj" />
   </ItemGroup>
 
   <ItemGroup>
