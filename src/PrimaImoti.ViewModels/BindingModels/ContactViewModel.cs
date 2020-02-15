@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using PrimaImoti.Common;
 
 namespace PrimaImoti.ViewModels
 {

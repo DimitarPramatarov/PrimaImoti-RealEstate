@@ -1,12 +1,8 @@
-﻿using PrimaImoti.Common.Mapping;
-using PrimaImoti.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using PrimaImoti.ViewModels;
 
-namespace PrimaImoti.Services.Data.Messages.Models
+namespace PrimaImoti.Services.Data
 {
-    public class MessageAddServiceModel : IMapFrom<ContactViewModel>
+    public class MessageAddServiceModel 
     {
     }
 }

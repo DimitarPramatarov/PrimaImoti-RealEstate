@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PrimaImoti.Common.Mapping
+namespace PrimaImoti.Services.Mappings
 {
     public interface IMapFrom<T>
     {

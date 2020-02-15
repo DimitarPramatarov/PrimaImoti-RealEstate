@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using PrimaImoti.Common.Mapping;
 using PrimaImoti.DataModels;
+using PrimaImoti.Services.Mappings;
 
 namespace PrimaImoti.Services.Data.Messages.Models
 {
-    public class MessageDetailsServiceModel : IMapFrom<Message>, IHaveCustomMapping
+    public class MessageDetailsServiceModel : IMapFrom<Message>, IHaveCustomMappings
     {
 
         public string Title { get; set; }
