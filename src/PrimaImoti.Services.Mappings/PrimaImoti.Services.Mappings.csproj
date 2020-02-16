@@ -8,4 +8,8 @@
     <PackageReference Include="AutoMapper" Version="9.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PrimaImoti.DataModels\PrimaImoti.DataModels.csproj" />
+  </ItemGroup>
+
 </Project>

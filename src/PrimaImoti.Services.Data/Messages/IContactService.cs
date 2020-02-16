@@ -10,5 +10,7 @@ namespace PrimaImoti.Services.Data
 
         Task<IEnumerable<MessageDetailsServiceModel>> AllMessages();
 
+        Task DeleteMessage(int id); 
+
     }
 }
