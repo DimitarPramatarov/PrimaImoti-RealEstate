@@ -1,4 +1,4 @@
-﻿@model IEnumerable<PrimaImoti.ViewModels.ViewModels.WaitingEstatesViewModel>
+﻿@model PrimaImoti.ViewModels.ViewModels.WaitingEstatesViewModel
 @{
     Layout = "_AdminLayout";
 }
@@ -10,7 +10,6 @@
                     <th scope="auto"></th>
                     <th scope="col">ID</th>
                     <th scope="col">Име</th>
-                    <th scope="col">Фамилия</th>
                     <th scope="col">Телефон</th>
                     <th scope="col">Вид Имот</th>
                     <th scope="col">Адрес</th>
@@ -18,17 +17,16 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model)
+                @foreach (var item in Model.WaitingEstates)
                 {
                     <tr>
                         <th scope="auto">
                         <td>@Html.DisplayFor(modelItem => item.Id)</td>
-                        <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
-                        <td>@Html.DisplayFor(modelItem => item.LastName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Name)</td>
                         <td>@Html.DisplayFor(modelItem => item.Phone)</td>
                         <td>@Html.DisplayFor(modelItem => item.Type)</td>
                         <td>@Html.DisplayFor(modelItem => item.Adress)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Date)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CreatedOn)</td>
                         <td>
                         </td>
                     </tr>

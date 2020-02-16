@@ -1,35 +1,29 @@
-﻿using AutoMapper;
-using PrimaImoti.DataModels;
-using PrimaImoti.DataModels.Ad;
+﻿using PrimaImoti.DataModels.Ad;
 using PrimaImoti.Services.Mappings;
-using System;
-
 namespace PrimaImoti.Services.Data.Estates.Models
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class WaitingEstatesServiceModel : IMapFrom<Ad>
     {
-        public double Price { get; set; }
+        [Display(Name = "ID")]
 
-        public string Curency {get; set;}
+        public string Id { get; set; }
 
-        public DateTime CreatedOn {get; set;}
+        [Display(Name = "Име")]
+        public string Name { get; set; }
 
-        public bool Aproved {get; set;} = false;
+        [Display(Name = "Телефон")]
+        public string Phone { get; set; }
 
-        public string Description { get; set; }
+        [Display(Name = "Вид имот")]
+        public string Type { get; set; }
 
-        public byte[] Images { get; set; }
+        [Display(Name = "Адрес")]
+        public string Adress { get; set; }
 
-        public Person Person {get; set;}
+        [Display(Name = "Дата")]
+        public string CreatedOn { get; set; }
 
-        public EstateProperty Estate { get; set; }
-
-        public PropertyType Type { get; set; }
-
-        public void CreateMappings(IProfileExpression configuration)
-            => configuration
-            .CreateMap<Ad, WaitingEstatesServiceModel>();
-
-            // finish waiting services!
     }
 }

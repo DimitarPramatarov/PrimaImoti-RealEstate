@@ -13,6 +13,8 @@ using PrimaImoti.Services.Mappings;
 using PrimaImoti.Models;
 using System.Reflection;
 using AutoMapper;
+using PrimaImoti.Services.Data.Estates;
+using PrimaImoti.Services.Data.Estates.Implementations;
 
 namespace PrimaImoti
 {
@@ -63,6 +65,7 @@ namespace PrimaImoti
 
             //Application services
             services.AddTransient<IContactService, ContactService>();
+            services.AddTransient<IEstateService, EstateService>();
 
             var mappingConfig = new MapperConfiguration(mc =>
             {

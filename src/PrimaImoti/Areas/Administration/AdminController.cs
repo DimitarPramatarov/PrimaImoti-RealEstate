@@ -1,26 +1,31 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using PrimaImoti.Data;
-using PrimaImoti.ViewModels.ViewModels;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using PrimaImoti.Controllers;
-using PrimaImoti.Services.Data;
-using PrimaImoti.ViewModels;
-
-namespace PrimaImoti.Areas.Administration.Controllers
+﻿namespace PrimaImoti.Areas.Administration.Controllers
 {
+
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Mvc;
+    using System.Linq;
+    using System.Threading.Tasks;
+
+    using PrimaImoti.Data;
+    using PrimaImoti.Controllers;
+    using PrimaImoti.Services.Data;
+    using PrimaImoti.ViewModels;
+    using PrimaImoti.Services.Data.Estates;
+    using PrimaImoti.ViewModels.ViewModels;
+
     [Authorize(Roles = "Admin")]
     public class AdminController : BaseController
     {
-        private readonly ApplicationDbContext _context;
+        private readonly ApplicationDbContext context;
         private readonly IContactService contactService;
+        private readonly IEstateService estateService;
+
         public AdminController(ApplicationDbContext context,
-            IContactService contactService)
+            IContactService contactService, IEstateService estateService)
         {
-            _context = context;
+            this.context = context;
             this.contactService = contactService;
+            this.estateService = estateService;
         }
 
         [HttpGet]
@@ -43,32 +48,21 @@ namespace PrimaImoti.Areas.Administration.Controllers
 
 
         [HttpGet]
-        public IActionResult WaitingEstates()
+        public async Task<IActionResult> WaitingEstates()
         {
-            List<WaitingEstatesViewModel> waitingEstates = _context.Ads
-                .Where(estate => estate.Aproved == false)
-                .Select(estateFromDb => new WaitingEstatesViewModel
-                {
 
-                    Date = estateFromDb.CreatedOn.ToString(),
-                    Type = estateFromDb.Type,
-                    Adress = estateFromDb.Estate.Adress,
-                    FirstName = estateFromDb.Person.FirstName,
-                    LastName = estateFromDb.Person.LastName,
-                    Phone = estateFromDb.Person.Phone,
-                    Email = estateFromDb.Person.Email,
-                    Id = estateFromDb.Id,
-
-                }).ToList();
-
-
-            return View(waitingEstates);
+            var model = new WaitingEstatesViewModel
+            {
+                WaitingEstates = await this.estateService.WaitingForAprove()
+            };
+           
+            return View(model);
         }
 
         [HttpPost]
         public async Task<IActionResult> AproveEstate(int id)
         {
-            var aproval = _context.Ads.FirstOrDefault(x => x.Id == id);
+            var aproval = this.context.Ads.FirstOrDefault(x => x.Id == id);
 
             if (aproval == null)
             {
@@ -76,7 +70,7 @@ namespace PrimaImoti.Areas.Administration.Controllers
             }
 
             aproval.Aproved = true;
-            await _context.SaveChangesAsync();
+            await this.context.SaveChangesAsync();
 
 
             return View();
