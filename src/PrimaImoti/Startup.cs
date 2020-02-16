@@ -12,6 +12,7 @@ using PrimaImoti.Services.Data;
 using PrimaImoti.Services.Mappings;
 using PrimaImoti.Models;
 using System.Reflection;
+using AutoMapper;
 
 namespace PrimaImoti
 {
@@ -62,12 +63,22 @@ namespace PrimaImoti
 
             //Application services
             services.AddTransient<IContactService, ContactService>();
+
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            });
+
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
+
+            services.AddAutoMapper(typeof(MappingProfile));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, UserManager<PrimaImotiUser> userManager, RoleManager<IdentityRole> roleManager)
         {
-            AutoMapperConfig.RegisterMappings(typeof(ErrorViewModel).GetTypeInfo().Assembly);
+            //AutoMapperConfig.RegisterMappings(typeof(ErrorViewModel).GetTypeInfo().Assembly);
 
             using (var serviceScope = app.ApplicationServices.CreateScope())
             {
