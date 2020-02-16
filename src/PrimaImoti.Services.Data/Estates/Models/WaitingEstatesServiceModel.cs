@@ -6,7 +6,7 @@ using System;
 
 namespace PrimaImoti.Services.Data.Estates.Models
 {
-    public class WaitingEstatesServiceModel : IMapFrom<Ad>, IHaveCustomMappings
+    public class WaitingEstatesServiceModel : IMapFrom<Ad>
     {
         public double Price { get; set; }
 

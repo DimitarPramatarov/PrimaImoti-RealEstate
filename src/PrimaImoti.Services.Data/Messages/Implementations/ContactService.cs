@@ -3,46 +3,43 @@
     using PrimaImoti.Data;
     using PrimaImoti.DataModels;
     using PrimaImoti.Services.Data.Messages.Models;
+
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-    using PrimaImoti.Services.Mappings;
     using Microsoft.EntityFrameworkCore;
     using AutoMapper.QueryableExtensions;
+    using AutoMapper;
 
     public class ContactService : IContactService
     {
 
         private readonly ApplicationDbContext context;
 
-        public ContactService(ApplicationDbContext context)
+        private readonly IMapper mapper;
+
+        public ContactService(ApplicationDbContext context, IMapper mapper)
         {
             this.context = context;
+            this.mapper = mapper;
         }
 
         public async Task<IEnumerable<MessageDetailsServiceModel>> AllMessages()
             => await this.context
             .Messages
-            .To<MessageDetailsServiceModel>()
             .OrderByDescending(x => x.Created)
+            .ProjectTo<MessageDetailsServiceModel>(mapper.ConfigurationProvider)
             .ToListAsync();
 
-         //  await this.context.Messages
-         //   .OrderByDescending(a => a.Created)
-         //   .Select(message => new  MessagesViewModel
-         //   {
-         //       FirstName = message.Sender.FirstName,
-         //       LastName = message.Sender.LastName,
-         //       Email = message.Sender.Email,
-         //       Date = message.Created,
-         //       Phone = message.Sender.Phone,
-         //       Message = message.Content,
-         //       Title = message.Title,
-         //       
-         //   }).ToListAsync();
+        public async Task DeleteMessage(int id)
+        {
+            var message = this.context.Messages
+                 .Where(a => a.Id == id);
 
-
+                this.context.Remove(message);
+                await this.context.SaveChangesAsync();
+        }
 
         public async Task SendMessageAsync(string firstName, string lastName, string email, string content, string title)
         {
