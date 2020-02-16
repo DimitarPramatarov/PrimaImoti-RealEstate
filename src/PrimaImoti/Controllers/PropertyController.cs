@@ -1,29 +1,37 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using PrimaImoti.Data;
-using PrimaImoti.DataModels;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using PrimaImoti.ViewModels.EstateViewModels;
-using PrimaImoti.ViewModels.ViewModels;
-using PrimaImoti.ViewModels;
-using PrimaImoti.DataModels.Ad;
-using PrimaImoti.DataModels.Estate;
-using System;
-
-namespace PrimaImoti.Controllers
+﻿namespace PrimaImoti.Controllers
 {
+    using AutoMapper;
+    using System;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Mvc;
+    using System.IO;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using System.Collections.Generic;
+
+    using PrimaImoti.Data;
+    using PrimaImoti.DataModels;
+    using PrimaImoti.ViewModels.ViewModels;
+    using PrimaImoti.ViewModels;
+    using PrimaImoti.DataModels.Ad;
+    using PrimaImoti.DataModels.Estate;
+    using PrimaImoti.Services.Data.Estates;
+    using Microsoft.AspNetCore.Http;
+
     [AllowAnonymous]
     public class PropertyController : Controller
     {
 
-        private readonly ApplicationDbContext _context;
+        private readonly ApplicationDbContext context;
+        private readonly IEstateService estateService;
+        private readonly IMapper mapper;
 
-        public PropertyController(ApplicationDbContext context)
+        public PropertyController(ApplicationDbContext context, IEstateService estateService,
+            IMapper mapper)
         {
-            _context = context;
+            this.context = context;
+            this.estateService = estateService;
+            this.mapper = mapper;
         }
 
         [HttpGet]
@@ -40,95 +48,21 @@ namespace PrimaImoti.Controllers
 
         [HttpPost]
         public async Task<IActionResult> AddEstate(AddEstateViewModel model)
-        {
-          
-            var firstName = model.Person.FirstName;
-            var lastName = model.Person.LastName;
-            var email = model.Person.Email;
-            var phone = model.Person.Phone;
+        {  
+            var image = CreateImage(model.FormFile);
 
+            byte[] img = image;
+            
+            var estate = mapper.Map<Ad>(model);
+            await this.estateService.CreateAsync(estate);
 
-            Person person = new Person
-            {
-               FirstName = firstName,
-               LastName = lastName,
-               Email = email,
-               Phone = phone,
-            };
-
-            EstateFeatures estateFeatures = new EstateFeatures
-            {
-                AccessControl = model.AccsessControl,
-                Credit = model.Credit,
-                Elevator = model.WithElevator,
-                Garage = model.Garage,
-                InBuilding = model.InBuildingProcess,
-                InternetConnection = model.WithInternetConnection,
-                Martgage = model.iSMortgage,
-                Parking = model.iSMortgage,
-                Renovated = model.Renovated,
-                Security = model.Renovated,
-                VideoScurity = model.VideoSecurity,
-                Trade = model.Trade,
-                Transition = model.WithTransition,
-                WithBussines = model.WithTransition,
-            };
-
-
-            //upload the image and add house for sale
-            using (var memoryStream = new MemoryStream())
-            {
-                await model.FormFile.CopyToAsync(memoryStream);
-
-                if (memoryStream.Length < 2097152)
-                {
-
-                    var images = memoryStream.ToArray();
-
-
-
-                    EstateProperty estate = new EstateProperty
-                    {
-                        Location = model.Location,
-                        Adress = model.Adress,
-                        Area = model.Area,
-                        Furniture = model.Furniture,
-                        Building = model.Building,
-                        Floor = model.Floor,
-                        Heating = model.Heating,
-                        Image = images,
-                        SecondLocation = model.SecondLocation,
-                        EstateFeatures = estateFeatures,
-                    };
-
-                    Ad ad = new Ad
-                    {
-                        Price = model.Price,
-                        Curency = model.Currency,
-                        Description = model.Description,
-                        Estate = estate,
-                        Images = images,
-                        CreatedOn = DateTime.UtcNow,
-                        Aproved = false,
-                        Person = person,
-                    };
-
-                    if (!ModelState.IsValid)
-                    {
-                        return View();
-                    }
-
-                    await _context.Ads.AddAsync(ad);
-                    await _context.SaveChangesAsync();
-                }
-            }
 
             if (!ModelState.IsValid)
             {
                 return View();
             }
 
-            await _context.SaveChangesAsync();
+            await this.context.SaveChangesAsync();
 
             return View("_PropertyIsAdded");
         }
@@ -136,7 +70,7 @@ namespace PrimaImoti.Controllers
         [HttpGet]
         public IActionResult AllEstates()
         {
-            List<AllEstatesViewModel> allEstates = _context.Ads
+            List<AllEstatesViewModel> allEstates = this.context.Ads
                 .Select(DbEstate => new AllEstatesViewModel
                 {
                     Type = DbEstate.Type,
@@ -152,6 +86,22 @@ namespace PrimaImoti.Controllers
 
             return View(allEstates);
 
+        }
+
+        public byte[] CreateImage(IFormFile formFile)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                formFile.CopyTo(memoryStream);
+
+                if (memoryStream.Length < 2097152)
+                {
+                    var image = memoryStream.ToArray();
+                    return image;
+                }
+            }
+
+            throw new ArgumentException();
         }
     }
 }

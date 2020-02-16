@@ -66,8 +66,8 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label asp-for="Adress"></label>
-                                            <input asp-for="Adress" name="adress" type="text" class="form-control" placeholder="Въведете адрес">
+                                            <label asp-for="Estate.Adress"></label>
+                                            <input asp-for="Estate.Adress" name="adress" type="text" class="form-control" placeholder="Въведете адрес">
                                         </div>
                                     </div>
                                 </div>
@@ -81,8 +81,8 @@
                                     <div class="col-sm-12">
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                <label asp-for="Location"></label>
-                                                <select asp-for="Location" id="lunchBegins" class="dropdown show-tick form-control">
+                                                <label asp-for="Estate.Location"></label>
+                                                <select asp-for="Estate.Location" id="lunchBegins" class="dropdown show-tick form-control">
                                                     <option>–Избери–</option>
                                                     <option>Трошево</option>
                                                     <option>Младост</option>
@@ -126,8 +126,8 @@
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                <label asp-for="Building"></label>
-                                                <select asp-for="Building" id="lunchBegins" class="dropdown show-tick form-control" data-live-search="true" title="Въведи">
+                                                <label asp-for="Estate.Building"></label>
+                                                <select asp-for="Estate.Building" id="lunchBegins" class="dropdown show-tick form-control" data-live-search="true" title="Въведи">
                                                     <option>–Избери–</option>
                                                     <option>Тухла</option>
                                                     <option>Панел</option>
@@ -138,8 +138,8 @@
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                <label asp-for="Heating">Отопление</label>
-                                                <select asp-for="Heating" id="basic" class="dropdown show-tick form-control">
+                                                <label asp-for="Estate.Heating">Отопление</label>
+                                                <select asp-for="Estate.Heating" id="basic" class="dropdown show-tick form-control">
                                                     <option>–Избери–</option>
                                                     <option>Тец</option>
                                                     <option>Локално</option>
@@ -150,14 +150,14 @@
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                <label asp-for="Area"></label>
-                                                <input asp-for="Area" id="basic" type="number" class="form-control" placeholder="Бъведи квадратура">
+                                                <label asp-for="Estate.Area"></label>
+                                                <input asp-for="Estate.Area" id="basic" type="number" class="form-control" placeholder="Бъведи квадратура">
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                <label asp-for="Furniture"></label>
-                                                <select asp-for="Furniture" id="basic" class="dropdown show-tick form-control">
+                                                <label asp-for="Estate.Furniture"></label>
+                                                <select asp-for="Estate.Furniture" id="basic" class="dropdown show-tick form-control">
                                                     <option>–Избери–</option>
                                                     <option value="Да">Да</option>
                                                     <option value="Не">Не</option>
@@ -166,20 +166,20 @@
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                <label asp-for="Area">Под район</label>
-                                                <input asp-for="Area" id="basic" type="text" class="form-control" placeholder="Бъведи квадратура">
+                                                <label asp-for="Estate.Area">Под район</label>
+                                                <input asp-for="Estate.Area" id="basic" type="text" class="form-control" placeholder="Бъведи квадратура">
                                             </div>
                                         </div>
                                         <div class="col-sm-3" id="dvor">
                                             <div class="form-group">
                                                 <label>Двор кв.м</label>
-                                                <input asp-for="Area" id="basic" type="number" class="form-control" placeholder="Бъведи квадратура">
+                                                <input asp-for="Estate.Area" id="basic" type="number" class="form-control" placeholder="Бъведи квадратура">
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                <label asp-for="Floor"></label>
-                                                <select asp-for="Floor" id="basic" class="dropdown show-tick form-control">
+                                                <label asp-for="Estate.Floor"></label>
+                                                <select asp-for="Estate.Floor" id="basic" class="dropdown show-tick form-control">
                                                     <option>–Избери–</option>
                                                     <option value="1">Партер</option>
                                                     <option value="2">1-ви</option>
@@ -220,7 +220,6 @@
                                             <div class="form-group">
                                                 <div class="checkbox">
                                                     <label>
-                                                        <input asp-for="InBuildingProcess" type="checkbox">В строеж
                                                     </label>
                                                 </div>
                                             </div>
@@ -229,7 +228,7 @@
                                             <div class="form-group">
                                                 <div class="checkbox">
                                                     <label>
-                                                        <input asp-for="WithTransition" type="checkbox">С преход
+                                                        <input asp-for="Estate.EstateFeatures.Transition" type="checkbox">С преход
                                                     </label>
                                                 </div>
                                             </div>
@@ -238,7 +237,7 @@
                                             <div class="form-group">
                                                 <div class="checkbox">
                                                     <label>
-                                                        <input asp-for="WithElevator" type="checkbox">Асаньор
+                                                        <input asp-for="Estate.EstateFeatures.Elevator" type="checkbox">Асаньор
                                                     </label>
                                                 </div>
                                             </div>
@@ -247,7 +246,7 @@
                                             <div class="form-group">
                                                 <div class="checkbox">
                                                     <label>
-                                                        <input asp-for="Garage" type="checkbox">Гараж
+                                                        <input asp-for="Estate.EstateFeatures.Garage" type="checkbox">Гараж
                                                     </label>
                                                 </div>
                                             </div>
@@ -258,7 +257,7 @@
                                             <div class="form-group">
                                                 <div class="checkbox">
                                                     <label>
-                                                        <input asp-for="Parking" type="checkbox">Паркинг
+                                                        <input asp-for="Estate.EstateFeatures.Parking" type="checkbox">Паркинг
                                                     </label>
                                                 </div>
                                             </div>
@@ -267,7 +266,7 @@
                                             <div class="form-group">
                                                 <div class="checkbox">
                                                     <label>
-                                                        <input asp-for="Credit" type="checkbox">Лизинг
+                                                        <input asp-for="Estate.EstateFeatures.Credit" type="checkbox">Лизинг
                                                     </label>
                                                 </div>
                                             </div>
@@ -276,7 +275,7 @@
                                             <div class="form-group">
                                                 <div class="checkbox">
                                                     <label>
-                                                        <input asp-for="iSMortgage" type="checkbox">Ипотекиран
+                                                        <input asp-for="Estate.EstateFeatures.Martgage" type="checkbox">Ипотекиран
                                                     </label>
                                                 </div>
                                             </div>
@@ -285,7 +284,7 @@
                                             <div class="form-group">
                                                 <div class="checkbox">
                                                     <label>
-                                                        <input asp-for="Trade" type="checkbox">Бартер
+                                                        <input asp-for="Estate.EstateFeatures.Trade" type="checkbox">Бартер
                                                     </label>
                                                 </div>
                                             </div>
@@ -294,7 +293,7 @@
                                             <div class="form-group">
                                                 <div class="checkbox">
                                                     <label>
-                                                        <input asp-for="WithInternetConnection" type="checkbox">Интернет връзка
+                                                        <input asp-for="Estate.EstateFeatures.InternetConnection" type="checkbox">Интернет връзка
                                                     </label>
                                                 </div>
                                             </div>
@@ -303,7 +302,7 @@
                                             <div class="form-group">
                                                 <div class="checkbox">
                                                     <label>
-                                                        <input asp-for="WithBussiness" type="checkbox">С действащ бизнес
+                                                        <input asp-for="Estate.EstateFeatures.WithBussines" type="checkbox">С действащ бизнес
                                                     </label>
                                                 </div>
                                             </div>
@@ -312,7 +311,7 @@
                                             <div class="form-group">
                                                 <div class="checkbox">
                                                     <label>
-                                                        <input asp-for="VideoSecurity" type="checkbox">Видео наблюдение
+                                                        <input asp-for="Estate.EstateFeatures.VideoSecurity" type="checkbox">Видео наблюдение
                                                     </label>
                                                 </div>
                                             </div>
@@ -321,7 +320,7 @@
                                             <div class="form-group">
                                                 <div class="checkbox">
                                                     <label>
-                                                        <input asp-for="AccsessControl" type="checkbox">Контрол на достъпа
+                                                        <input asp-for="Estate.EstateFeatures.AccsessControl" type="checkbox">Контрол на достъпа
                                                     </label>
                                                 </div>
                                             </div>
@@ -330,7 +329,7 @@
                                             <div class="form-group">
                                                 <div class="checkbox">
                                                     <label>
-                                                        <input asp-for="Security" type="checkbox">Охрана
+                                                        <input asp-for="Estate.EstateFeatures.Security" type="checkbox">Охрана
                                                     </label>
                                                 </div>
                                             </div>
@@ -338,8 +337,8 @@
                                         <div class="col-sm-3">
                                             <div class="form-group">
                                                 <div class="checkbox">
-                                                    <label asp-for="Renovated">
-                                                        <input asp-for="Renovated" type="checkbox">Саниран
+                                                    <label asp-for="Estate.EstateFeatures.Renovated">
+                                                        <input asp-for="Estate.EstateFeatures.Renovated" type="checkbox">Саниран
                                                     </label>
                                                 </div>
                                             </div>

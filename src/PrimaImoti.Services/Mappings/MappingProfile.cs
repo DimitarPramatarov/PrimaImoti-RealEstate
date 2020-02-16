@@ -1,11 +1,10 @@
 ﻿using AutoMapper;
 using PrimaImoti.DataModels;
 using PrimaImoti.DataModels.Ad;
+using PrimaImoti.Services.Data.Admin.Models;
 using PrimaImoti.Services.Data.Estates.Models;
 using PrimaImoti.Services.Data.Messages.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using PrimaImoti.ViewModels;
 
 namespace PrimaImoti.Services.Mappings
 {
@@ -28,6 +27,18 @@ namespace PrimaImoti.Services.Mappings
                 .ForMember(a => a.Phone, cfg => cfg.MapFrom(b => b.Person.Phone))
                 .ForMember(a => a.Adress, cfg => cfg.MapFrom(b => b.Estate.Adress))
                 .ForMember(a => a.Adress, cfg => cfg.MapFrom(b => b.Estate.Adress));
+
+
+
+            CreateMap<AddEstateViewModel, Ad>()
+                .ForMember(a => a.Estate, cfg => cfg.MapFrom(b => b.Estate))
+                .ForMember(a => a.Person, cfg => cfg.MapFrom(b => b.Person));
+
+
+            CreateMap<Ad, AddEstateViewModel>()
+                 .ForMember(a => a.Estate, cfg => cfg.MapFrom(b => b.Estate))
+                .ForMember(a => a.Person, cfg => cfg.MapFrom(b => b.Person));
+
         }
     }
 }

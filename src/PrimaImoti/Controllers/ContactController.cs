@@ -35,7 +35,7 @@ namespace PrimaImoti.Controllers
 
             if (!ModelState.IsValid)
             {
-                return View();
+                return View(viewModel);
             }
         
 
