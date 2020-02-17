@@ -1,4 +1,5 @@
-﻿using PrimaImoti.Services.Data.Messages.Models;
+﻿using PrimaImoti.DataModels;
+using PrimaImoti.Services.Data.Messages.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -11,6 +12,7 @@ namespace PrimaImoti.Services.Data
         Task<IEnumerable<MessageDetailsServiceModel>> AllMessages();
 
         Task DeleteMessage(int id); 
+
 
     }
 }

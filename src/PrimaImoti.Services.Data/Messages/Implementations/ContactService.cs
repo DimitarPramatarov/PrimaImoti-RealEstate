@@ -34,12 +34,16 @@
 
         public async Task DeleteMessage(int id)
         {
-            var message = this.context.Messages
-                 .Where(a => a.Id == id);
 
-                this.context.Remove(message);
-                await this.context.SaveChangesAsync();
+            var messageForDelete = this.context.Messages.Where(x => x.Id == id).FirstOrDefault();
+
+            this.context.Messages.Remove(messageForDelete);
+            await this.context.SaveChangesAsync();
         }
+
+        public async Task GetMessageByIdAsync(int id)
+            =>  this.context.Messages
+            .Where(x => x.Id == id).FirstOrDefault();
 
         public async Task SendMessageAsync(string firstName, string lastName, string email, string content, string title)
         {

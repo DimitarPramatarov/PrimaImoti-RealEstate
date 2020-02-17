@@ -12,6 +12,6 @@ namespace PrimaImoti.Services.Data.Admin.Implementations
             this.context = context;
         }
 
-       
+        
     }
 }
