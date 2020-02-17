@@ -8,7 +8,7 @@
 
         public string Content { get; set; }
 
-        public string Created {get; set;}
+        public string CreatedOn {get; set;}
 
         public  Person Sender {get; set;}
     }

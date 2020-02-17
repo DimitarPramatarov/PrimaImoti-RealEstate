@@ -7,12 +7,11 @@ namespace PrimaImoti.Services.Data
 {
     public interface IContactService
     {
-        Task SendMessageAsync(string firstName, string lastName, string email, string content, string subject);
+        Task SendMessageAsync(string firstName, string lastName, string email, string content, string subject, string phone);
 
         Task<IEnumerable<MessageDetailsServiceModel>> AllMessages();
 
-        Task DeleteMessage(int id); 
-
+        Task DeleteMessage(IEnumerable<int> messagesForDeleteIDs); 
 
     }
 }

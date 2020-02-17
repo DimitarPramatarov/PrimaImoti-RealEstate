@@ -6,33 +6,29 @@ namespace PrimaImoti.ViewModels
     {
 
         [Display(Name = "Тема")]
-        [DataType(DataType.Text)]
         [Required(ErrorMessage =  "Полето е задължително!")]
         public string Subject {get; set;}
 
         [Display(Name = "Име")]
-        [DataType(DataType.Text)]
         [Required(ErrorMessage = "Полето е задължително!")]
         public string FirstName {get; set;}
 
         [Display(Name = "Фамилия")]
-        [DataType(DataType.Text)]
         [Required(ErrorMessage = "Полето е задължително!")]
         public string LastName {get; set;}
 
         [Display(Name = "Имейл")]
         [EmailAddress(ErrorMessage = "Въведете валиден имейл адрес!")]
-        [DataType(DataType.EmailAddress)]
         [Required(ErrorMessage = "Полето е задължително!")]
         public string Email {get; set;}
 
-        [DataType(DataType.MultilineText)]
         [Required(ErrorMessage = "Полето е задължително!")]
-        public string Message {get; set;}
+        [Display(Name = "Съобщение")]
+        public string Content {get; set;}
 
         [Required(ErrorMessage = "Моля въведете телефон за връзка!")]
         [Display(Name = "Телефон")]
-        [Phone]
+        [Phone(ErrorMessage = "Моля въведете валиден телефон за в")]
         public string Phone {get; set;}
     }
 }

@@ -27,16 +27,18 @@ namespace PrimaImoti.Controllers
 
         [AllowAnonymous]
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Contact(ContactViewModel viewModel)
         {
 
-            await contact.SendMessageAsync(viewModel.FirstName, viewModel.LastName, 
-                viewModel.Email, viewModel.Message, viewModel.Subject);
 
             if (!ModelState.IsValid)
             {
                 return View(viewModel);
             }
+
+            await contact.SendMessageAsync(viewModel.FirstName, viewModel.LastName, 
+                viewModel.Email, viewModel.Content, viewModel.Subject, viewModel.Phone);
         
 
             return Redirect("/");

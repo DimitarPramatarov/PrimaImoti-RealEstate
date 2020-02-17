@@ -28,24 +28,31 @@
         public async Task<IEnumerable<MessageDetailsServiceModel>> AllMessages()
             => await this.context
             .Messages
-            .OrderByDescending(x => x.Created)
+            .OrderByDescending(x => x.CreatedOn)
             .ProjectTo<MessageDetailsServiceModel>(mapper.ConfigurationProvider)
             .ToListAsync();
 
-        public async Task DeleteMessage(int id)
+        public async Task DeleteMessage(IEnumerable<int> messageForDeleteIDs)
         {
 
-            var messageForDelete = this.context.Messages.Where(x => x.Id == id).FirstOrDefault();
+            foreach (var id in messageForDeleteIDs)
+            {
+                var messageForDelete = this.context.Messages.FirstOrDefault(a => a.Id == id);
 
-            this.context.Messages.Remove(messageForDelete);
-            await this.context.SaveChangesAsync();
+                if (messageForDelete != null)
+                {
+                    this.context.Messages.Remove(messageForDelete);
+
+                    await this.context.SaveChangesAsync();
+                }
+            }
         }
 
         public async Task GetMessageByIdAsync(int id)
-            =>  this.context.Messages
+            => this.context.Messages
             .Where(x => x.Id == id).FirstOrDefault();
 
-        public async Task SendMessageAsync(string firstName, string lastName, string email, string content, string title)
+        public async Task SendMessageAsync(string firstName, string lastName, string email, string content, string title, string phone)
         {
             var created = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
 
@@ -54,13 +61,14 @@
                 FirstName = firstName,
                 LastName = lastName,
                 Email = email,
+                Phone = phone,
             };
 
             var message = new Message
             {
                 Title = title,
                 Content = content,
-                Created = created,
+                CreatedOn = created,
                 Sender = sender,
             };
 

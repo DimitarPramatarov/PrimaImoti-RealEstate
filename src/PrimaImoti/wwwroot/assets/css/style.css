@@ -3044,3 +3044,6 @@ padding: 10px;
 #map {
     height: 300px;
 }
+textarea[name=contact]{
+    resize: none;
+}

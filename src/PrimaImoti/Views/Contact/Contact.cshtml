@@ -54,41 +54,49 @@
                 <hr>
                 <h2>Пишете ни</h2>
                 <form method="post" asp-controller="Contact" asp-action="Contact">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label asp-for="FirstName"></label>
+                                <label asp-for="FirstName" class="control-label"></label>
                                 <input asp-for="FirstName" type="text" class="form-control" id="firstname">
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
                             </div>
-                        </div>
+                            </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label asp-for="LastName"></label>
+                                <label asp-for="LastName" class="control-label"></label>
                                 <input asp-for="LastName" type="text" class="form-control" id="lastname">
+                                <span asp-validation-for="LastName" class="text-danger"></span>
                             </div>
-                        </div>
+                            </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label asp-for="Email"></label>
+                                <label asp-for="Email" class="control-label"></label>
                                 <input asp-for="Email" type="text" class="form-control" id="email">
+                                <span asp-validation-for="Email" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label asp-for="Subject"></label>
+                                <label asp-for="Phone" class="control-label"></label>
+                                <input asp-for="Phone" type="text" class="form-control" />
+                                <span asp-validation-for="Phone" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label asp-for="Subject" class="control-label"></label>
                                 <input asp-for="Subject" type="text" class="form-control" id="subject">
+                                <span asp-validation-for="Subject" class="text-danger"></span>
                             </div>
                         </div>
-                        <div class="col-xs-12">
+                        <div class="col-xs-6">
                             <div class="form-group">
-                                <label asp-for="Phone"></label>
-                                <textarea asp-for="Phone" id="message" class="form-control"></textarea>
-                            </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                <label asp-for="Message">Message</label>
-                                <textarea asp-for="Message" id="message" class="form-control"></textarea>
+                                <div></div>
+                                <label asp-for="Content" class="control-label"></label>
+                                <textarea asp-for="Content" rows="5" class="form-control"></textarea>
+                                <span asp-validation-for="Content" class="text-danger"></span>
                             </div>
                         </div>
 

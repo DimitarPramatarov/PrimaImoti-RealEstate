@@ -12,6 +12,7 @@
     using PrimaImoti.ViewModels;
     using PrimaImoti.Services.Data.Estates;
     using PrimaImoti.ViewModels.ViewModels;
+    using System.Collections.Generic;
 
     [Authorize(Roles = "Admin")]
     public class AdminController : BaseController
@@ -47,11 +48,11 @@
         }
 
         [HttpPost]
-        public async Task<IActionResult> Messages(int id)
+        public async Task<IActionResult> Messages(IEnumerable<int> values)
         {
-             await this.contactService.DeleteMessage(id);
+              await this.contactService.DeleteMessage(values);
 
-            return Redirect("/");
+            return Redirect("/Admin/Dashboard");
         }
 
 
@@ -63,7 +64,7 @@
             {
                 WaitingEstates = await this.estateService.WaitingForAprove()
             };
-           
+
             return View(model);
         }
 
