@@ -91,11 +91,18 @@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.Content)
                                     </td>
+                                    <td>
+                                        <form asp-controller="Admin" asp-action="Messages">
+                                            <a ="btn btn-primary" asp-route="@item.Id"></a>
+                                            <button type="submit" c;ass="btn btn-primarty">Изтрий</button>
+                                            </form>
+                                    </td>
                                 </tr>
                                 }
                             </tbody>
                             <tfoot>
                                 <tr>
+                                    <th>Id</th>
                                     <th>Дата</th>
                                     <th>От</th>
                                     <th>Тема</th>

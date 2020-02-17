@@ -46,6 +46,14 @@
             return View(model);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Messages(int id)
+        {
+             await this.contactService.DeleteMessage(id);
+
+            return Redirect("/");
+        }
+
 
         [HttpGet]
         public async Task<IActionResult> WaitingEstates()
