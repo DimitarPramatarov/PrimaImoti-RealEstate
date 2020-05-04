@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimaImoti.Data", "..\Prima
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimaImoti.Common", "..\PrimaImoti.Common\PrimaImoti.Common.csproj", "{1D7F8329-B3BD-41B3-8F0D-F09F8D56B2B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimaImoti.Services.Mappings", "..\PrimaImoti.Services.Mappings\PrimaImoti.Services.Mappings.csproj", "{2749F267-1951-4B8C-8633-00AFC438C356}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimaImoti.Services.Mappings", "..\PrimaImoti.Services.Mappings\PrimaImoti.Services.Mappings.csproj", "{2749F267-1951-4B8C-8633-00AFC438C356}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

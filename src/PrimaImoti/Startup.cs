@@ -40,6 +40,7 @@ namespace PrimaImoti
                 .AddDefaultTokenProviders();
 
             services.AddControllersWithViews();
+            services.AddServerSideBlazor();
             services.AddRazorPages();
 
             services.Configure<IdentityOptions>(options =>
@@ -127,6 +128,7 @@ namespace PrimaImoti
                     name: "Admin",
                     pattern: "{controller=AdminController}/{action=DashBoard}/{id?}");
                 endpoints.MapRazorPages();
+                endpoints.MapBlazorHub();
             });
         }
     }
